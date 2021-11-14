@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5EE866C-7961-4D27-B820-686256642B76}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ShillohHillCollege.Win</RootNamespace>
+    <AssemblyName>ShillohHillCollege.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\adminDashboard.Designer.cs">
+      <DependentUpon>adminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DebtHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DebtHistory.Designer.cs">
+      <DependentUpon>DebtHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EditClass.Designer.cs">
+      <DependentUpon>EditClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaymentCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentCentre.Designer.cs">
+      <DependentUpon>PaymentCentre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentHistory.Designer.cs">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecordSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\RecordSearch.Designer.cs">
+      <DependentUpon>RecordSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecordUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\RecordUpload.Designer.cs">
+      <DependentUpon>RecordUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SettingsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SettingsPage.Designer.cs">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\studentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\studentManagement.Designer.cs">
+      <DependentUpon>studentManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\bursaryDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\bursaryDashboard.Designer.cs">
+      <DependentUpon>bursaryDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\DebtPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\DebtPayment.Designer.cs">
+      <DependentUpon>DebtPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\NewPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\NewPayment.Designer.cs">
+      <DependentUpon>NewPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\NewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\NewStudent.Designer.cs">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\passwordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\passwordChange.Designer.cs">
+      <DependentUpon>passwordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\PaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\PaymentHistory.Designer.cs">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary\viewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bursary\viewStudent.Designer.cs">
+      <DependentUpon>viewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\ReportCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\ReportCalendar.Designer.cs">
+      <DependentUpon>ReportCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ReportDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\ReportDashboard.Designer.cs">
+      <DependentUpon>ReportDashboard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\adminDashboard.resx">
+      <DependentUpon>adminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\DebtHistory.resx">
+      <DependentUpon>DebtHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditClass.resx">
+      <DependentUpon>EditClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PaymentCentre.resx">
+      <DependentUpon>PaymentCentre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PaymentHistory.resx">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\RecordSearch.resx">
+      <DependentUpon>RecordSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\RecordUpload.resx">
+      <DependentUpon>RecordUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SettingsPage.resx">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\studentManagement.resx">
+      <DependentUpon>studentManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\bursaryDashboard.resx">
+      <DependentUpon>bursaryDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\DebtPayment.resx">
+      <DependentUpon>DebtPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\NewPayment.resx">
+      <DependentUpon>NewPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\NewStudent.resx">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\passwordChange.resx">
+      <DependentUpon>passwordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\PaymentHistory.resx">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bursary\viewStudent.resx">
+      <DependentUpon>viewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporting\ReportCalendar.resx">
+      <DependentUpon>ReportCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ReportDashboard.resx">
+      <DependentUpon>ReportDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\history_icon.jpg" />
+    <None Include="Resources\passwordlock.png" />
+    <Content Include="Resources\refreshIcon.png" />
+    <None Include="Resources\student_image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShillohHillsCollege.Core\ShillohHillsCollege.Core.csproj">
+      <Project>{DA16823D-D86E-496B-A5A5-55F068F5D1BC}</Project>
+      <Name>ShillohHillsCollege.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
