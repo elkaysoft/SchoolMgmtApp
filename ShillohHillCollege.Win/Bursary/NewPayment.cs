@@ -97,6 +97,7 @@ namespace ShillohHillsCollege.Win.Bursary
                 paymentObj.term = drpTerm.SelectedItem.ToString();
                 paymentObj.studentId = txtStudentId.Text;
                 paymentObj.totalAmt = principalAmount;
+                paymentObj.paymentId = txtAutoPaymentId.Text;
 
                 var uploadResponse = PaymentCommand.AddStudentPaymentInfo(paymentObj);
 
@@ -106,7 +107,7 @@ namespace ShillohHillsCollege.Win.Bursary
                     var newBalance = outstandingBalance + balance;
 
                     PaymentCommand.AddPaymentHistory(txtStudentId.Text, drpSession.SelectedItem.ToString(),
-                        drpTerm.SelectedItem.ToString(), drpClass.SelectedItem.ToString(), paidAmount, paymentObj.description);
+                        drpTerm.SelectedItem.ToString(), drpClass.SelectedItem.ToString(), paidAmount, paymentObj.description, txtAutoPaymentId.Text);
                     PaymentCommand.UpdateStudentOutstandingBalance(txtStudentId.Text, newBalance);
                     insertionCount += 1;
                 }

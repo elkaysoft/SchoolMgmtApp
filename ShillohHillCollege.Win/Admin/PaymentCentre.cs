@@ -1,4 +1,5 @@
-﻿using ShillohHillsCollege.Core.Commands;
+﻿using ShillohHillCollege.Win.Reporting;
+using ShillohHillsCollege.Core.Commands;
 using ShillohHillsCollege.Core.DTO;
 using ShillohHillsCollege.Core.Queries;
 using System;
@@ -68,6 +69,7 @@ namespace ShillohHillsCollege.Win.Admin
             var currentAcademicInfo = SettingsQuery.GetCurrentAcademicTerm();
             txtCurrSess.Text = currentAcademicInfo.Session;
             txtCurrTerm.Text = currentAcademicInfo.Term;
+            txtAutoPaymentId.Text = $"PID-{SettingsQuery.GetNextPaymentId()}";
         }
 
         private void SetAllClassesComboBox()
@@ -124,7 +126,13 @@ namespace ShillohHillsCollege.Win.Admin
             DialogResult result = MessageBox.Show("Are you sure you want to submit this payment", "Information Centre", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
+                string pId = txtAutoPaymentId.Text;
                 UploadStudentPayment();
+                SettingsCommand.UpdateAutoPaymentId();
+                var receipt = new FeeReceipt();
+                receipt.lblInvoiceId.Text = pId;
+                receipt.Show();
+                this.Hide();
             }
             else
             {
@@ -154,6 +162,7 @@ namespace ShillohHillsCollege.Win.Admin
                 paymentObj.term = txtCurrTerm.Text;
                 paymentObj.studentId = lblStudRegNum.Text;
                 paymentObj.totalAmt = principalAmount;
+                paymentObj.paymentId = txtAutoPaymentId.Text;
 
                 var uploadResponse = PaymentCommand.AddStudentPaymentInfo(paymentObj);
                 
@@ -163,7 +172,7 @@ namespace ShillohHillsCollege.Win.Admin
                     var newBalance = outstandingBalance + balance;
 
                     PaymentCommand.AddPaymentHistory(lblStudRegNum.Text, "",
-                        "", "", paidAmount, paymentObj.description);
+                        "", "", paidAmount, paymentObj.description, txtAutoPaymentId.Text);
                     PaymentCommand.UpdateStudentOutstandingBalance(lblStudRegNum.Text, newBalance);
                     insertionCount += 1;
                 }
@@ -197,29 +206,37 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearchParam.Text == "")
+            var query = StudentQuery.GetStudentByKeyword(txtSearchParam.Text).Result;
+            var arry = query.data;
+            dgHistorylookup.Rows.Clear();
+            if (arry.Any())
             {
-                MessageBox.Show("Kindly supply Student Id",
-                        "Information Center", MessageBoxButtons.OK);
-                return;
+                foreach (var student in arry)
+                {
+                    dgHistorylookup.Rows.Add(student.RegistrationNo, student.FullName, student.CurrentClass);
+                }
+            }
+            else
+            {
+                MessageBox.Show($"{query.description}",
+                   "Information Center", MessageBoxButtons.OK);
             }
 
-            dgPaymentHistory.Rows.Clear();
-            dgStatistics.Rows.Clear();
-            SetPaymentHistory();
-            SetStatistics();           
+            //dgStatistics.Rows.Clear();
+            //SetPaymentHistory();
+            //SetStatistics();           
         }
 
-        private void SetPaymentHistory()
+        private void SetPaymentHistory(string studentId)
         {
-            var paymentHistoryObj = PaymentQuery.GetPaymentHistoryByStudent(txtSearchParam.Text);
+            var paymentHistoryObj = PaymentQuery.GetPaymentHistoryByStudent(studentId);
             if (paymentHistoryObj.Any())
             {
-                var outstandingAmt = PaymentQuery.GetStudentCurrentBalance(txtSearchParam.Text);
+                var outstandingAmt = PaymentQuery.GetStudentCurrentBalance(studentId);
                 txtOutstanding.Text = outstandingAmt.ToString();
                 foreach (var payment in paymentHistoryObj)
                 {
-                    dgPaymentHistory.Rows.Add(payment.session, payment.term, payment.studentClass, payment.amountPaid, payment.dateCreated);
+                    dgStatistics.Rows.Add(payment.session, payment.term, payment.studentClass, payment.description, payment.amountPaid, payment.dateCreated);                    
                 }
             }
             else
@@ -229,15 +246,14 @@ namespace ShillohHillsCollege.Win.Admin
             }
         }
 
-        private void SetStatistics()
+        private void SetStatistics(string studentId)
         {
-            var paymentStats = PaymentQuery.GetFeesStatisticsByStudent(txtSearchParam.Text);
+            var paymentStats = PaymentQuery.GetFeesStatisticsByStudent(studentId);
             if (paymentStats.Any())
             {
                 foreach (var payment in paymentStats)
                 {
-                    dgStatistics.Rows.Add(payment.session, payment.term, payment.currentClass,payment.totalAmount, 
-                        payment.AmountPaid, payment.outstandingAmount);
+                    dgStatistics.Rows.Add(payment.session, payment.term, payment.currentClass, payment.AmountPaid, payment.description);
                 }
             }
             else
@@ -342,7 +358,7 @@ namespace ShillohHillsCollege.Win.Admin
                 var currentBalance = PaymentQuery.GetStudentCurrentBalance(studentId);
                 var newBalance = currentBalance - creditAmt;
                 PaymentCommand.AddPaymentHistory(studentId, txtSelectedSession.Text, txtSelectedTerm.Text,
-                    txtSelectedClass.Text, creditAmt, "Debt Payment");
+                    txtSelectedClass.Text, creditAmt, "Debt Payment", "");
                 PaymentCommand.UpdateStudentOutstandingBalance(studentId, newBalance);
                 PaymentCommand.UpdateAmountPaidAfterDebt(lblPaymentId.Text, creditAmt);
 
@@ -448,6 +464,7 @@ namespace ShillohHillsCollege.Win.Admin
                     lblCurrName.Text = result.FullName;
                     txtMyClass.Text = currClass;
                     lblStudRegNum.Text = result.RegistrationNo;
+                    lblSelOutstandingAmt.Text = result.OutstandingBalance.ToString();
 
                     var academicFees = SettingsQuery.GetAcademicFeesByFilter(txtCurrSess.Text, txtCurrTerm.Text, currClass);
                     if (academicFees.Any())
@@ -495,7 +512,20 @@ namespace ShillohHillsCollege.Win.Admin
             }
         }
 
-       
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void dgHistorylookup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgStudentLookup.Columns[3].Index)
+            {
+                var registrationNo = dgHistorylookup.CurrentRow.Cells[0].Value.ToString();
+                dgStatistics.Rows.Clear();
+                dgStatistics.Visible = true;
+                SetPaymentHistory(registrationNo);               
+            }
+        }
     }
 }

@@ -52,6 +52,7 @@ namespace ShillohHillsCollege.Win.Bursary
             this.drpClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.drpSession = new System.Windows.Forms.ComboBox();
+            this.txtAutoPaymentId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAcademicFees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +61,10 @@ namespace ShillohHillsCollege.Win.Bursary
             this.btnAddToList.BackColor = System.Drawing.Color.White;
             this.btnAddToList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddToList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddToList.Location = new System.Drawing.Point(935, 98);
+            this.btnAddToList.Location = new System.Drawing.Point(935, 78);
+            this.btnAddToList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddToList.Name = "btnAddToList";
-            this.btnAddToList.Size = new System.Drawing.Size(109, 29);
+            this.btnAddToList.Size = new System.Drawing.Size(109, 23);
             this.btnAddToList.TabIndex = 47;
             this.btnAddToList.Text = "Add to List";
             this.btnAddToList.UseVisualStyleBackColor = false;
@@ -71,22 +73,22 @@ namespace ShillohHillsCollege.Win.Bursary
             // lblCurrentClass
             // 
             this.lblCurrentClass.AutoSize = true;
-            this.lblCurrentClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrentClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.lblCurrentClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblCurrentClass.Location = new System.Drawing.Point(1029, 245);
+            this.lblCurrentClass.Location = new System.Drawing.Point(1029, 196);
             this.lblCurrentClass.Name = "lblCurrentClass";
-            this.lblCurrentClass.Size = new System.Drawing.Size(16, 25);
+            this.lblCurrentClass.Size = new System.Drawing.Size(17, 25);
             this.lblCurrentClass.TabIndex = 46;
             this.lblCurrentClass.Text = ",";
             // 
             // lblStudentName
             // 
             this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.lblStudentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblStudentName.Location = new System.Drawing.Point(1029, 203);
+            this.lblStudentName.Location = new System.Drawing.Point(1029, 162);
             this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(16, 25);
+            this.lblStudentName.Size = new System.Drawing.Size(17, 25);
             this.lblStudentName.TabIndex = 45;
             this.lblStudentName.Text = ".";
             this.lblStudentName.Click += new System.EventHandler(this.lblStudentName_Click);
@@ -94,9 +96,10 @@ namespace ShillohHillsCollege.Win.Bursary
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Wheat;
-            this.button3.Location = new System.Drawing.Point(899, 207);
+            this.button3.Location = new System.Drawing.Point(899, 166);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 29);
+            this.button3.Size = new System.Drawing.Size(92, 23);
             this.button3.TabIndex = 44;
             this.button3.Text = "Verify Id";
             this.button3.UseVisualStyleBackColor = false;
@@ -105,9 +108,10 @@ namespace ShillohHillsCollege.Win.Bursary
             // btnMakePayment
             // 
             this.btnMakePayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnMakePayment.Location = new System.Drawing.Point(697, 341);
+            this.btnMakePayment.Location = new System.Drawing.Point(697, 273);
+            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMakePayment.Name = "btnMakePayment";
-            this.btnMakePayment.Size = new System.Drawing.Size(136, 44);
+            this.btnMakePayment.Size = new System.Drawing.Size(136, 35);
             this.btnMakePayment.TabIndex = 43;
             this.btnMakePayment.Text = "Submit Payment";
             this.btnMakePayment.UseVisualStyleBackColor = false;
@@ -116,8 +120,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // txtCumulative
             // 
             this.txtCumulative.Enabled = false;
-            this.txtCumulative.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCumulative.Location = new System.Drawing.Point(29, 217);
+            this.txtCumulative.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCumulative.Location = new System.Drawing.Point(29, 174);
+            this.txtCumulative.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCumulative.Name = "txtCumulative";
             this.txtCumulative.ReadOnly = true;
             this.txtCumulative.Size = new System.Drawing.Size(158, 34);
@@ -125,8 +130,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // 
             // txtAmounttoPay
             // 
-            this.txtAmounttoPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAmounttoPay.Location = new System.Drawing.Point(935, 47);
+            this.txtAmounttoPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtAmounttoPay.Location = new System.Drawing.Point(935, 38);
+            this.txtAmounttoPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAmounttoPay.Name = "txtAmounttoPay";
             this.txtAmounttoPay.Size = new System.Drawing.Size(158, 34);
             this.txtAmounttoPay.TabIndex = 41;
@@ -134,27 +140,27 @@ namespace ShillohHillsCollege.Win.Bursary
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 195);
+            this.label5.Location = new System.Drawing.Point(26, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.Size = new System.Drawing.Size(84, 17);
             this.label5.TabIndex = 39;
             this.label5.Text = "Grand Total";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(935, 24);
+            this.label19.Location = new System.Drawing.Point(935, 19);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(106, 20);
+            this.label19.Size = new System.Drawing.Size(100, 17);
             this.label19.TabIndex = 40;
             this.label19.Text = "Amount to Pay";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(697, 180);
+            this.label4.Location = new System.Drawing.Point(697, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 38;
             this.label4.Text = "Registration N&o";
             // 
@@ -166,13 +172,14 @@ namespace ShillohHillsCollege.Win.Bursary
             this.Column4,
             this.Column5,
             this.Column15});
-            this.dgAcademicFees.Location = new System.Drawing.Point(227, 186);
+            this.dgAcademicFees.Location = new System.Drawing.Point(227, 149);
+            this.dgAcademicFees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgAcademicFees.Name = "dgAcademicFees";
             this.dgAcademicFees.RowHeadersVisible = false;
             this.dgAcademicFees.RowHeadersWidth = 51;
             this.dgAcademicFees.RowTemplate.Height = 29;
             this.dgAcademicFees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgAcademicFees.Size = new System.Drawing.Size(456, 199);
+            this.dgAcademicFees.Size = new System.Drawing.Size(456, 159);
             this.dgAcademicFees.TabIndex = 37;
             // 
             // Column4
@@ -198,8 +205,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // 
             // txtStudentId
             // 
-            this.txtStudentId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtStudentId.Location = new System.Drawing.Point(697, 203);
+            this.txtStudentId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtStudentId.Location = new System.Drawing.Point(697, 162);
+            this.txtStudentId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(196, 34);
             this.txtStudentId.TabIndex = 36;
@@ -207,9 +215,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(230, 32);
+            this.label3.Location = new System.Drawing.Point(230, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 35;
@@ -218,13 +226,14 @@ namespace ShillohHillsCollege.Win.Bursary
             // drpTerm
             // 
             this.drpTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpTerm.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.drpTerm.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.drpTerm.FormattingEnabled = true;
             this.drpTerm.Items.AddRange(new object[] {
             "FIRST",
             "SECOND",
             "THIRD"});
-            this.drpTerm.Location = new System.Drawing.Point(227, 52);
+            this.drpTerm.Location = new System.Drawing.Point(227, 42);
+            this.drpTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpTerm.Name = "drpTerm";
             this.drpTerm.Size = new System.Drawing.Size(195, 29);
             this.drpTerm.TabIndex = 34;
@@ -232,9 +241,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label22.Location = new System.Drawing.Point(654, 29);
+            this.label22.Location = new System.Drawing.Point(654, 23);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(138, 20);
             this.label22.TabIndex = 33;
@@ -243,9 +252,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(439, 32);
+            this.label2.Location = new System.Drawing.Point(439, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 32;
@@ -254,9 +263,10 @@ namespace ShillohHillsCollege.Win.Bursary
             // drpAcademicFees
             // 
             this.drpAcademicFees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpAcademicFees.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.drpAcademicFees.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.drpAcademicFees.FormattingEnabled = true;
-            this.drpAcademicFees.Location = new System.Drawing.Point(654, 52);
+            this.drpAcademicFees.Location = new System.Drawing.Point(654, 42);
+            this.drpAcademicFees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpAcademicFees.Name = "drpAcademicFees";
             this.drpAcademicFees.Size = new System.Drawing.Size(264, 29);
             this.drpAcademicFees.TabIndex = 31;
@@ -264,7 +274,7 @@ namespace ShillohHillsCollege.Win.Bursary
             // drpClass
             // 
             this.drpClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpClass.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.drpClass.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.drpClass.FormattingEnabled = true;
             this.drpClass.Items.AddRange(new object[] {
             "JSS 1",
@@ -273,7 +283,8 @@ namespace ShillohHillsCollege.Win.Bursary
             "SS 1",
             "SS 2",
             "SS 3"});
-            this.drpClass.Location = new System.Drawing.Point(436, 52);
+            this.drpClass.Location = new System.Drawing.Point(436, 42);
+            this.drpClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpClass.Name = "drpClass";
             this.drpClass.Size = new System.Drawing.Size(195, 29);
             this.drpClass.TabIndex = 30;
@@ -282,9 +293,9 @@ namespace ShillohHillsCollege.Win.Bursary
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(16, 32);
+            this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 29;
@@ -293,18 +304,28 @@ namespace ShillohHillsCollege.Win.Bursary
             // drpSession
             // 
             this.drpSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpSession.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.drpSession.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.drpSession.FormattingEnabled = true;
-            this.drpSession.Location = new System.Drawing.Point(13, 52);
+            this.drpSession.Location = new System.Drawing.Point(13, 42);
+            this.drpSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpSession.Name = "drpSession";
             this.drpSession.Size = new System.Drawing.Size(195, 29);
             this.drpSession.TabIndex = 28;
             // 
+            // txtAutoPaymentId
+            // 
+            this.txtAutoPaymentId.Location = new System.Drawing.Point(13, 332);
+            this.txtAutoPaymentId.Name = "txtAutoPaymentId";
+            this.txtAutoPaymentId.Size = new System.Drawing.Size(100, 22);
+            this.txtAutoPaymentId.TabIndex = 48;
+            this.txtAutoPaymentId.Visible = false;
+            // 
             // NewPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 458);
+            this.ClientSize = new System.Drawing.Size(1370, 366);
+            this.Controls.Add(this.txtAutoPaymentId);
             this.Controls.Add(this.btnAddToList);
             this.Controls.Add(this.lblCurrentClass);
             this.Controls.Add(this.lblStudentName);
@@ -325,6 +346,7 @@ namespace ShillohHillsCollege.Win.Bursary
             this.Controls.Add(this.drpClass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.drpSession);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewPayment";
@@ -362,5 +384,6 @@ namespace ShillohHillsCollege.Win.Bursary
         private System.Windows.Forms.ComboBox drpClass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox drpSession;
+        private System.Windows.Forms.TextBox txtAutoPaymentId;
     }
 }

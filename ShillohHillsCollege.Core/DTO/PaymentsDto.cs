@@ -41,6 +41,7 @@ namespace ShillohHillsCollege.Core.DTO
         public decimal amtPaid { get; set; }
         public string studentId { get; set; }
         public decimal balance { get; set; }
+        public string paymentId { get; set; }
     }
 
     public class FeesPaymentDto

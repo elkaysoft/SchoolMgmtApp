@@ -12,6 +12,7 @@ namespace ShillohHillsCollege.Win.Reporting
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var rptCalendar = new ReportCalendar();
+            rptCalendar.lblReportType.Text = "AllDebtors";
             rptCalendar.ShowDialog();
         }
     }

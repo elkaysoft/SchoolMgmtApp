@@ -69,7 +69,6 @@ namespace ShillohHillsCollege.Core.Queries
             return response;
         }
 
-
         public bool ValidatePassword(string username, string password)
         {
             bool response = false;

@@ -67,7 +67,7 @@ namespace ShillohHillsCollege.Core.Commands
 
             try
             {
-                var sql = "INSERT INTO FeesPayment(Session,Term,CurrentClass,Description,TotalAmount,AmountPaid,OutstandingAmount,IsDeleted,StudentId,CreatedBy) VALUES(@sessionName,@term,@klass,@description,@TotalAmount,@amtPaid,@outstanding,@isDeleted,@studentId,@createdBy)";
+                var sql = "INSERT INTO FeesPayment(Session,Term,CurrentClass,Description,TotalAmount,AmountPaid,OutstandingAmount,IsDeleted,StudentId,CreatedBy, PaymentId) VALUES(@sessionName,@term,@klass,@description,@TotalAmount,@amtPaid,@outstanding,@isDeleted,@studentId,@createdBy, @paymentid)";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
@@ -82,7 +82,8 @@ namespace ShillohHillsCollege.Core.Commands
                         outstanding = request.balance,
                         isDeleted = false,
                         studentId = request.studentId,
-                        createdBy = "admin"     
+                        createdBy = "admin",
+                        paymentid = request.paymentId
                     });
 
                     if (resp > 0)
@@ -124,11 +125,11 @@ namespace ShillohHillsCollege.Core.Commands
             }
         }
 
-        public static void AddPaymentHistory(string studentId, string session, string terms, string klass, decimal amount, string description)
+        public static void AddPaymentHistory(string studentId, string session, string terms, string klass, decimal amount, string description, string paymentId)
         {
             try
             {
-                var sql = "INSERT INTO PaymentHistory(StudentId,Session,Term,StudentClass,AmountPaid, description) VALUES(@studentId,@sessionName,@term,@klass,@amtPaid,@desc)";
+                var sql = "INSERT INTO PaymentHistory(StudentId,Session,Term,StudentClass,AmountPaid, description, paymentId) VALUES(@studentId,@sessionName,@term,@klass,@amtPaid,@desc, @payId)";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
@@ -139,7 +140,8 @@ namespace ShillohHillsCollege.Core.Commands
                         klass = klass,
                         amtPaid = amount,
                         studentId = studentId,
-                        desc = description
+                        desc = description,
+                        payId = paymentId
                     });
 
                 }

@@ -73,7 +73,7 @@ namespace ShillohHillsCollege.Win.Bursary
             var currentBalance = PaymentQuery.GetStudentCurrentBalance(txtSearchId.Text);
             var newBalance = currentBalance - creditAmt;
             PaymentCommand.AddPaymentHistory(txtSearchId.Text, txtSelectedSession.Text, txtSelectedTerm.Text,
-                txtSelectedClass.Text, creditAmt, "Debt Payment");
+                txtSelectedClass.Text, creditAmt, "Debt Payment", "");
             PaymentCommand.UpdateStudentOutstandingBalance(txtSearchId.Text, newBalance);
             //PaymentCommand.UpdateAmountPaidAfterDebt(txtSearchId.Text, txtSelectedSession.Text, txtSelectedTerm.Text,
             //    txtSelectedClass.Text, creditAmt);
