@@ -16,9 +16,39 @@ namespace ShillohHillsCollege.Win.Reporting
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SetReportInfo();
+        }
+
+        private void AllDebtorReport()
+        {
             var bulkRpt = new BulkReport();
             bulkRpt.lblStart.Text = dtFrom.Text;
             bulkRpt.lblEnd.Text = dtEnd.Text;
+            bulkRpt.lblReportType.Text = lblReportType.Text;
+            bulkRpt.Show();
+            this.Hide();
+        }
+
+        private void AllPaymentReport()
+        {
+            var bulkRpt = new BulkReport();
+            bulkRpt.lblStart.Text = dtFrom.Text;
+            bulkRpt.lblEnd.Text = dtEnd.Text;
+            bulkRpt.lblReportType.Text = lblReportType.Text;
+            bulkRpt.Show();
+            this.Hide();
+        }
+
+        private void SetReportInfo()
+        {
+            if(lblReportType.Text == "AllDebtors")
+            {
+                AllDebtorReport();
+            }
+            else if(lblReportType.Text == "AllPaymentReport")
+            {
+                AllPaymentReport();
+            }
         }
 
         private void ReportCalendar_Load(object sender, EventArgs e)

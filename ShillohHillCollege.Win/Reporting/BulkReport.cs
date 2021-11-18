@@ -20,7 +20,9 @@ namespace ShillohHillCollege.Win.Reporting
             InitializeComponent();
         }
 
-        private void LoadDebtorReceipt()
+        
+
+        private void LoadAllDebtorReport()
         {
             var cryRpt = new ReportDocument();
             TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
@@ -28,7 +30,7 @@ namespace ShillohHillCollege.Win.Reporting
             ConnectionInfo crConnectionInfo = new ConnectionInfo();
             Tables CrTables;
 
-            cryRpt.Load(@"C:\\Reporting\schoolReceipt.rpt");
+            cryRpt.Load(@"C:\\Reporting\AllDebtorReport.rpt");
 
             cryRpt.SetParameterValue("@BeginDate", lblStart.Text);
             cryRpt.SetParameterValue("@EndDate", lblEnd.Text);
@@ -39,7 +41,7 @@ namespace ShillohHillCollege.Win.Reporting
             crConnectionInfo.Password = ConfigurationManager.AppSettings["dbPassword"];
 
             CrTables = cryRpt.Database.Tables;
-            foreach (CrystalDecisions.CrystalReports.Engine.Table CrTable in CrTables)
+            foreach (Table CrTable in CrTables)
             {
                 crtableLogoninfo = CrTable.LogOnInfo;
                 crtableLogoninfo.ConnectionInfo = crConnectionInfo;
@@ -49,6 +51,122 @@ namespace ShillohHillCollege.Win.Reporting
             crystalReportViewer1.ReportSource = cryRpt;
 
         }
+        
+        private void LoadAllPaymentReport()
+        {
+            var cryRpt = new ReportDocument();
+            TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
+            TableLogOnInfo crtableLogoninfo = new TableLogOnInfo();
+            ConnectionInfo crConnectionInfo = new ConnectionInfo();
+            Tables CrTables;
+
+            cryRpt.Load(@"C:\\Reporting\AllPaymentReport.rpt");
+
+            cryRpt.SetParameterValue("@beginDate", lblStart.Text);
+            cryRpt.SetParameterValue("@endDate", lblEnd.Text);
+
+            crConnectionInfo.ServerName = ConfigurationManager.AppSettings["AppServer"];
+            crConnectionInfo.DatabaseName = ConfigurationManager.AppSettings["dbName"];
+            crConnectionInfo.UserID = ConfigurationManager.AppSettings["uID"];
+            crConnectionInfo.Password = ConfigurationManager.AppSettings["dbPassword"];
+
+            CrTables = cryRpt.Database.Tables;
+            foreach (Table CrTable in CrTables)
+            {
+                crtableLogoninfo = CrTable.LogOnInfo;
+                crtableLogoninfo.ConnectionInfo = crConnectionInfo;
+                CrTable.ApplyLogOnInfo(crtableLogoninfo);
+            }
+
+            crystalReportViewer1.ReportSource = cryRpt;
+
+        }
+
+        private void LoadDebtorReportByClass()
+        {
+            var cryRpt = new ReportDocument();
+            TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
+            TableLogOnInfo crtableLogoninfo = new TableLogOnInfo();
+            ConnectionInfo crConnectionInfo = new ConnectionInfo();
+            Tables CrTables;
+
+            cryRpt.Load(@"C:\\Reporting\DebtorReportByClass.rpt");
+
+            cryRpt.SetParameterValue("@beginDate", lblStart.Text);
+            cryRpt.SetParameterValue("@endDate", lblEnd.Text);
+            cryRpt.SetParameterValue("@className", lblClassName.Text);
+
+            crConnectionInfo.ServerName = ConfigurationManager.AppSettings["AppServer"];
+            crConnectionInfo.DatabaseName = ConfigurationManager.AppSettings["dbName"];
+            crConnectionInfo.UserID = ConfigurationManager.AppSettings["uID"];
+            crConnectionInfo.Password = ConfigurationManager.AppSettings["dbPassword"];
+
+            CrTables = cryRpt.Database.Tables;
+            foreach (Table CrTable in CrTables)
+            {
+                crtableLogoninfo = CrTable.LogOnInfo;
+                crtableLogoninfo.ConnectionInfo = crConnectionInfo;
+                CrTable.ApplyLogOnInfo(crtableLogoninfo);
+            }
+
+            crystalReportViewer1.ReportSource = cryRpt;
+
+        }
+
+        private void LoadPaymentReportByClass()
+        {
+            var cryRpt = new ReportDocument();
+            TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
+            TableLogOnInfo crtableLogoninfo = new TableLogOnInfo();
+            ConnectionInfo crConnectionInfo = new ConnectionInfo();
+            Tables CrTables;
+
+            cryRpt.Load(@"C:\\Reporting\PaymentReportByClass.rpt");
+
+            cryRpt.SetParameterValue("@beginDate", lblStart.Text);
+            cryRpt.SetParameterValue("@endDate", lblEnd.Text);
+            cryRpt.SetParameterValue("@className", lblClassName.Text);
+
+            crConnectionInfo.ServerName = ConfigurationManager.AppSettings["AppServer"];
+            crConnectionInfo.DatabaseName = ConfigurationManager.AppSettings["dbName"];
+            crConnectionInfo.UserID = ConfigurationManager.AppSettings["uID"];
+            crConnectionInfo.Password = ConfigurationManager.AppSettings["dbPassword"];
+
+            CrTables = cryRpt.Database.Tables;
+            foreach (Table CrTable in CrTables)
+            {
+                crtableLogoninfo = CrTable.LogOnInfo;
+                crtableLogoninfo.ConnectionInfo = crConnectionInfo;
+                CrTable.ApplyLogOnInfo(crtableLogoninfo);
+            }
+
+            crystalReportViewer1.ReportSource = cryRpt;
+
+        }
+
+
+
+
+        private void BulkReport_Load(object sender, EventArgs e)
+        {
+            if(lblReportType.Text == "AllDebtors")
+            {
+                LoadAllDebtorReport();
+            }
+            else if (lblReportType.Text == "AllPaymentReport")
+            {
+                LoadAllPaymentReport();
+            }
+            else if (lblReportType.Text == "DebtorsReportByClass")
+            {
+                LoadDebtorReportByClass();
+            }
+            else if (lblReportType.Text == "PaymentsReportByClass")
+            {
+                LoadPaymentReportByClass();
+            }
+        }
+
 
     }
 }

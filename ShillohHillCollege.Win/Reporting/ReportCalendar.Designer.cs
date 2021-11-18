@@ -94,13 +94,12 @@ namespace ShillohHillsCollege.Win.Reporting
             this.lblReportType.Size = new System.Drawing.Size(82, 20);
             this.lblReportType.TabIndex = 4;
             this.lblReportType.Text = "debtorRpt";
-            this.lblReportType.Visible = false;
             // 
             // ReportCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 134);
+            this.ClientSize = new System.Drawing.Size(420, 134);
             this.Controls.Add(this.lblReportType);
             this.Controls.Add(this.txtSlipId);
             this.Controls.Add(this.button1);

@@ -187,6 +187,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="docs\AllPaymentReport.cs">
+      <DependentUpon>AllPaymentReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="docs\DebtorReportByClass.cs">
+      <DependentUpon>DebtorReportByClass.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="docs\PaymentReportByClass.cs">
+      <DependentUpon>PaymentReportByClass.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reporting\BulkReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +222,12 @@
     </Compile>
     <Compile Include="Reporting\ReportCalendar.Designer.cs">
       <DependentUpon>ReportCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ReportCalendarTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\ReportCalendarTwo.Designer.cs">
+      <DependentUpon>ReportCalendarTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporting\ReportDashboard.cs">
       <SubType>Form</SubType>
@@ -291,6 +315,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="docs\AllPaymentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllPaymentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\DebtorReportByClass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DebtorReportByClass.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\PaymentReportByClass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentReportByClass.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\BulkReport.resx">
       <DependentUpon>BulkReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\ReportCalendar.resx">
       <DependentUpon>ReportCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ReportCalendarTwo.resx">
+      <DependentUpon>ReportCalendarTwo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\ReportDashboard.resx">
       <DependentUpon>ReportDashboard.cs</DependentUpon>
