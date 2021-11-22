@@ -29,13 +29,6 @@ namespace ShillohHillsCollege.Win.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,7 +76,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
             this.dgStudentClasses = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -117,10 +109,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1339, 487);
+            this.tabControl1.Size = new System.Drawing.Size(1400, 609);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage3
@@ -136,10 +128,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1331, 458);
+            this.tabPage3.Size = new System.Drawing.Size(1392, 576);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Session & Term Management";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -147,10 +139,10 @@ namespace ShillohHillsCollege.Win.Admin
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ShillohHillCollege.Win.Properties.Resources.refreshIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(801, 367);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1001, 459);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 49);
+            this.pictureBox1.Size = new System.Drawing.Size(88, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -159,14 +151,6 @@ namespace ShillohHillsCollege.Win.Admin
             // dgViewTerm
             // 
             this.dgViewTerm.AllowUserToAddRows = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgViewTerm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgViewTerm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewTerm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -175,21 +159,13 @@ namespace ShillohHillsCollege.Win.Admin
             this.Column13,
             this.Column14,
             this.Column15});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgViewTerm.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgViewTerm.Location = new System.Drawing.Point(19, 210);
-            this.dgViewTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgViewTerm.Location = new System.Drawing.Point(24, 262);
+            this.dgViewTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgViewTerm.Name = "dgViewTerm";
             this.dgViewTerm.RowHeadersVisible = false;
             this.dgViewTerm.RowHeadersWidth = 51;
             this.dgViewTerm.RowTemplate.Height = 29;
-            this.dgViewTerm.Size = new System.Drawing.Size(776, 206);
+            this.dgViewTerm.Size = new System.Drawing.Size(970, 258);
             this.dgViewTerm.TabIndex = 10;
             this.dgViewTerm.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewTerm_CellClick);
             // 
@@ -237,10 +213,10 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // txtTermSession
             // 
-            this.txtTermSession.Location = new System.Drawing.Point(83, 16);
-            this.txtTermSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTermSession.Location = new System.Drawing.Point(104, 20);
+            this.txtTermSession.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtTermSession.Name = "txtTermSession";
-            this.txtTermSession.Size = new System.Drawing.Size(176, 22);
+            this.txtTermSession.Size = new System.Drawing.Size(219, 27);
             this.txtTermSession.TabIndex = 8;
             // 
             // btnCreateTerm
@@ -248,10 +224,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.btnCreateTerm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateTerm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCreateTerm.ForeColor = System.Drawing.Color.Green;
-            this.btnCreateTerm.Location = new System.Drawing.Point(364, 97);
-            this.btnCreateTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateTerm.Location = new System.Drawing.Point(455, 121);
+            this.btnCreateTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCreateTerm.Name = "btnCreateTerm";
-            this.btnCreateTerm.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateTerm.Size = new System.Drawing.Size(148, 46);
             this.btnCreateTerm.TabIndex = 7;
             this.btnCreateTerm.Text = "Submit";
             this.btnCreateTerm.UseVisualStyleBackColor = true;
@@ -261,20 +237,20 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.dtEndTerm.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtEndTerm.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndTerm.Location = new System.Drawing.Point(364, 59);
-            this.dtEndTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtEndTerm.Location = new System.Drawing.Point(455, 74);
+            this.dtEndTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dtEndTerm.Name = "dtEndTerm";
-            this.dtEndTerm.Size = new System.Drawing.Size(176, 34);
+            this.dtEndTerm.Size = new System.Drawing.Size(219, 34);
             this.dtEndTerm.TabIndex = 6;
             // 
             // dtStartTerm
             // 
             this.dtStartTerm.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtStartTerm.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStartTerm.Location = new System.Drawing.Point(83, 59);
-            this.dtStartTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtStartTerm.Location = new System.Drawing.Point(104, 74);
+            this.dtStartTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dtStartTerm.Name = "dtStartTerm";
-            this.dtStartTerm.Size = new System.Drawing.Size(176, 34);
+            this.dtStartTerm.Size = new System.Drawing.Size(219, 34);
             this.dtStartTerm.TabIndex = 6;
             // 
             // drpAcademicTerm
@@ -286,45 +262,49 @@ namespace ShillohHillsCollege.Win.Admin
             "FIRST",
             "SECOND",
             "THIRD"});
-            this.drpAcademicTerm.Location = new System.Drawing.Point(364, 15);
-            this.drpAcademicTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpAcademicTerm.Location = new System.Drawing.Point(455, 19);
+            this.drpAcademicTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.drpAcademicTerm.Name = "drpAcademicTerm";
-            this.drpAcademicTerm.Size = new System.Drawing.Size(195, 29);
+            this.drpAcademicTerm.Size = new System.Drawing.Size(243, 29);
             this.drpAcademicTerm.TabIndex = 5;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(311, 63);
+            this.label12.Location = new System.Drawing.Point(389, 79);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 17);
+            this.label12.Size = new System.Drawing.Size(28, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "To";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(311, 18);
+            this.label10.Location = new System.Drawing.Point(389, 22);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 17);
+            this.label10.Size = new System.Drawing.Size(48, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Term";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 63);
+            this.label11.Location = new System.Drawing.Point(24, 79);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 17);
+            this.label11.Size = new System.Drawing.Size(48, 20);
             this.label11.TabIndex = 0;
             this.label11.Text = "From";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 18);
+            this.label9.Location = new System.Drawing.Point(24, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 17);
+            this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Session";
             // 
@@ -344,11 +324,11 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.drpSession);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1331, 458);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1392, 576);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Fees Management";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -358,10 +338,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.drpFeeClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpFeeClass.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.drpFeeClass.FormattingEnabled = true;
-            this.drpFeeClass.Location = new System.Drawing.Point(459, 78);
-            this.drpFeeClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpFeeClass.Location = new System.Drawing.Point(574, 98);
+            this.drpFeeClass.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.drpFeeClass.Name = "drpFeeClass";
-            this.drpFeeClass.Size = new System.Drawing.Size(160, 31);
+            this.drpFeeClass.Size = new System.Drawing.Size(199, 31);
             this.drpFeeClass.TabIndex = 12;
             // 
             // label6
@@ -369,7 +349,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(29, 14);
+            this.label6.Location = new System.Drawing.Point(36, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(261, 29);
             this.label6.TabIndex = 10;
@@ -380,7 +361,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(883, 58);
+            this.label5.Location = new System.Drawing.Point(1104, 72);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 9;
@@ -391,7 +373,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(651, 58);
+            this.label4.Location = new System.Drawing.Point(814, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 9;
@@ -399,31 +382,23 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(880, 79);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAmount.Location = new System.Drawing.Point(1100, 99);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(196, 22);
+            this.txtAmount.Size = new System.Drawing.Size(244, 27);
             this.txtAmount.TabIndex = 8;
             // 
             // txtFeeName
             // 
-            this.txtFeeName.Location = new System.Drawing.Point(651, 79);
-            this.txtFeeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFeeName.Location = new System.Drawing.Point(814, 99);
+            this.txtFeeName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtFeeName.Name = "txtFeeName";
-            this.txtFeeName.Size = new System.Drawing.Size(196, 22);
+            this.txtFeeName.Size = new System.Drawing.Size(244, 27);
             this.txtFeeName.TabIndex = 8;
             // 
             // dgFees
             // 
             this.dgFees.AllowUserToAddRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgFees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -431,21 +406,13 @@ namespace ShillohHillsCollege.Win.Admin
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgFees.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgFees.Location = new System.Drawing.Point(28, 180);
-            this.dgFees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgFees.Location = new System.Drawing.Point(35, 225);
+            this.dgFees.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgFees.Name = "dgFees";
             this.dgFees.RowHeadersVisible = false;
             this.dgFees.RowHeadersWidth = 51;
             this.dgFees.RowTemplate.Height = 29;
-            this.dgFees.Size = new System.Drawing.Size(885, 179);
+            this.dgFees.Size = new System.Drawing.Size(1106, 224);
             this.dgFees.TabIndex = 7;
             // 
             // Column1
@@ -490,10 +457,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSubmit.Location = new System.Drawing.Point(766, 374);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(958, 468);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(147, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(184, 38);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Upload Fees";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -503,10 +470,10 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(880, 110);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(1100, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 30);
+            this.button1.Size = new System.Drawing.Size(119, 38);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add to List";
             this.button1.UseVisualStyleBackColor = true;
@@ -517,7 +484,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(245, 58);
+            this.label3.Location = new System.Drawing.Point(306, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 5;
@@ -532,10 +500,10 @@ namespace ShillohHillsCollege.Win.Admin
             "FIRST",
             "SECOND",
             "THIRD"});
-            this.drpTerm.Location = new System.Drawing.Point(242, 78);
-            this.drpTerm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpTerm.Location = new System.Drawing.Point(302, 98);
+            this.drpTerm.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.drpTerm.Name = "drpTerm";
-            this.drpTerm.Size = new System.Drawing.Size(195, 29);
+            this.drpTerm.Size = new System.Drawing.Size(243, 29);
             this.drpTerm.TabIndex = 4;
             // 
             // label2
@@ -543,7 +511,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(454, 54);
+            this.label2.Location = new System.Drawing.Point(568, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 3;
@@ -554,7 +523,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(31, 58);
+            this.label1.Location = new System.Drawing.Point(39, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 1;
@@ -565,10 +535,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.drpSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpSession.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold);
             this.drpSession.FormattingEnabled = true;
-            this.drpSession.Location = new System.Drawing.Point(28, 78);
-            this.drpSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpSession.Location = new System.Drawing.Point(35, 98);
+            this.drpSession.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.drpSession.Name = "drpSession";
-            this.drpSession.Size = new System.Drawing.Size(195, 29);
+            this.drpSession.Size = new System.Drawing.Size(243, 29);
             this.drpSession.TabIndex = 0;
             // 
             // tabPage4
@@ -580,38 +550,39 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.label15);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1331, 458);
+            this.tabPage4.Size = new System.Drawing.Size(1392, 576);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Student Promotion";
             // 
             // txtSessionEnd
             // 
             this.txtSessionEnd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtSessionEnd.Location = new System.Drawing.Point(145, 106);
-            this.txtSessionEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSessionEnd.Location = new System.Drawing.Point(181, 132);
+            this.txtSessionEnd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtSessionEnd.Name = "txtSessionEnd";
             this.txtSessionEnd.ReadOnly = true;
-            this.txtSessionEnd.Size = new System.Drawing.Size(238, 34);
+            this.txtSessionEnd.Size = new System.Drawing.Size(296, 34);
             this.txtSessionEnd.TabIndex = 3;
             // 
             // txtCurrentSession
             // 
             this.txtCurrentSession.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtCurrentSession.Location = new System.Drawing.Point(145, 51);
-            this.txtCurrentSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCurrentSession.Location = new System.Drawing.Point(181, 64);
+            this.txtCurrentSession.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCurrentSession.Name = "txtCurrentSession";
             this.txtCurrentSession.ReadOnly = true;
-            this.txtCurrentSession.Size = new System.Drawing.Size(238, 34);
+            this.txtCurrentSession.Size = new System.Drawing.Size(296, 34);
             this.txtCurrentSession.TabIndex = 3;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(10, 113);
+            this.label17.Location = new System.Drawing.Point(12, 141);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 23);
             this.label17.TabIndex = 2;
@@ -621,7 +592,8 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(10, 54);
+            this.label16.Location = new System.Drawing.Point(12, 68);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(129, 23);
             this.label16.TabIndex = 2;
@@ -632,10 +604,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.Coral;
-            this.button2.Location = new System.Drawing.Point(440, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(496, 128);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 34);
+            this.button2.Size = new System.Drawing.Size(211, 42);
             this.button2.TabIndex = 1;
             this.button2.Text = "Promote";
             this.button2.UseVisualStyleBackColor = true;
@@ -646,7 +618,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.Navy;
-            this.label15.Location = new System.Drawing.Point(10, 14);
+            this.label15.Location = new System.Drawing.Point(12, 18);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(624, 25);
             this.label15.TabIndex = 0;
@@ -654,66 +627,33 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.dgStudentClasses);
             this.tabPage2.Controls.Add(this.txtNewClass);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1331, 458);
+            this.tabPage2.Size = new System.Drawing.Size(1392, 576);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Class Management";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 18);
-            this.button5.TabIndex = 0;
-            // 
             // dgStudentClasses
             // 
             this.dgStudentClasses.AllowUserToAddRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgStudentClasses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgStudentClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStudentClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
             this.Column9});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgStudentClasses.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dgStudentClasses.Location = new System.Drawing.Point(547, 19);
-            this.dgStudentClasses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgStudentClasses.Location = new System.Drawing.Point(684, 24);
+            this.dgStudentClasses.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgStudentClasses.Name = "dgStudentClasses";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgStudentClasses.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgStudentClasses.RowHeadersVisible = false;
             this.dgStudentClasses.RowHeadersWidth = 51;
             this.dgStudentClasses.RowTemplate.Height = 29;
-            this.dgStudentClasses.Size = new System.Drawing.Size(260, 176);
+            this.dgStudentClasses.Size = new System.Drawing.Size(325, 315);
             this.dgStudentClasses.TabIndex = 3;
             this.dgStudentClasses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStudentClasses_CellContentClick);
             // 
@@ -737,27 +677,28 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // txtNewClass
             // 
-            this.txtNewClass.Location = new System.Drawing.Point(125, 19);
-            this.txtNewClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewClass.Location = new System.Drawing.Point(100, 24);
+            this.txtNewClass.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtNewClass.Name = "txtNewClass";
-            this.txtNewClass.Size = new System.Drawing.Size(225, 22);
+            this.txtNewClass.Size = new System.Drawing.Size(280, 27);
             this.txtNewClass.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 22);
+            this.label7.Location = new System.Drawing.Point(20, 24);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.Size = new System.Drawing.Size(53, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Name";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(125, 53);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(100, 66);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 23);
+            this.button4.Size = new System.Drawing.Size(118, 29);
             this.button4.TabIndex = 0;
             this.button4.Text = "Create";
             this.button4.UseVisualStyleBackColor = true;
@@ -771,10 +712,11 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage5.Controls.Add(this.txtOldPassword);
             this.tabPage5.Controls.Add(this.label19);
             this.tabPage5.Controls.Add(this.label18);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1331, 458);
+            this.tabPage5.Size = new System.Drawing.Size(1392, 576);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Password Maintenance";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -782,9 +724,10 @@ namespace ShillohHillsCollege.Win.Admin
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(101, 348);
+            this.lblUsername.Location = new System.Drawing.Point(126, 435);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(71, 17);
+            this.lblUsername.Size = new System.Drawing.Size(95, 24);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "username";
             this.lblUsername.Visible = false;
@@ -794,10 +737,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button3.Location = new System.Drawing.Point(422, 83);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(528, 104);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 27);
+            this.button3.Size = new System.Drawing.Size(158, 34);
             this.button3.TabIndex = 2;
             this.button3.Text = "Change Password";
             this.button3.UseVisualStyleBackColor = true;
@@ -806,20 +749,20 @@ namespace ShillohHillsCollege.Win.Admin
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNewPassword.Location = new System.Drawing.Point(189, 83);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPassword.Location = new System.Drawing.Point(236, 104);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(214, 34);
+            this.txtNewPassword.Size = new System.Drawing.Size(266, 34);
             this.txtNewPassword.TabIndex = 1;
             // 
             // txtOldPassword
             // 
             this.txtOldPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtOldPassword.Location = new System.Drawing.Point(189, 26);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOldPassword.Location = new System.Drawing.Point(236, 32);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.ReadOnly = true;
-            this.txtOldPassword.Size = new System.Drawing.Size(214, 34);
+            this.txtOldPassword.Size = new System.Drawing.Size(266, 34);
             this.txtOldPassword.TabIndex = 1;
             // 
             // label19
@@ -827,7 +770,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.Maroon;
-            this.label19.Location = new System.Drawing.Point(22, 88);
+            this.label19.Location = new System.Drawing.Point(28, 110);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(135, 25);
             this.label19.TabIndex = 0;
@@ -838,7 +782,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.Maroon;
-            this.label18.Location = new System.Drawing.Point(22, 29);
+            this.label18.Location = new System.Drawing.Point(28, 36);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(161, 25);
             this.label18.TabIndex = 0;
@@ -846,12 +791,13 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // SettingsPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1263, 469);
+            this.ClientSize = new System.Drawing.Size(1402, 586);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsPage";
@@ -935,7 +881,6 @@ namespace ShillohHillsCollege.Win.Admin
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.DataGridView dgStudentClasses;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.PictureBox pictureBox1;

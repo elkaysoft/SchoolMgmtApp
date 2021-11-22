@@ -60,26 +60,28 @@ namespace ShillohHillsCollege.Win.Admin
             this.panel1.Controls.Add(this.drpClass);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 112);
+            this.panel1.Size = new System.Drawing.Size(874, 100);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 15);
+            this.label1.Location = new System.Drawing.Point(25, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Filter by:";
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.Location = new System.Drawing.Point(661, 14);
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.Location = new System.Drawing.Point(661, 11);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(163, 42);
+            this.btnSearch.Size = new System.Drawing.Size(163, 34);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -88,8 +90,9 @@ namespace ShillohHillsCollege.Win.Admin
             // txtStudentName
             // 
             this.txtStudentName.Enabled = false;
-            this.txtStudentName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStudentName.Location = new System.Drawing.Point(306, 17);
+            this.txtStudentName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtStudentName.Location = new System.Drawing.Point(306, 14);
+            this.txtStudentName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(335, 34);
             this.txtStudentName.TabIndex = 1;
@@ -98,16 +101,10 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.drpClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpClass.Enabled = false;
-            this.drpClass.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.drpClass.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.drpClass.FormattingEnabled = true;
-            this.drpClass.Items.AddRange(new object[] {
-            "JSS 1",
-            "JSS 2",
-            "JSS 3",
-            "SS 1",
-            "SS 2",
-            "SS 3"});
-            this.drpClass.Location = new System.Drawing.Point(306, 71);
+            this.drpClass.Location = new System.Drawing.Point(306, 57);
+            this.drpClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpClass.Name = "drpClass";
             this.drpClass.Size = new System.Drawing.Size(172, 33);
             this.drpClass.TabIndex = 0;
@@ -115,12 +112,13 @@ namespace ShillohHillsCollege.Win.Admin
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Filter By Name",
             "Filter By Class"});
-            this.comboBox1.Location = new System.Drawing.Point(23, 42);
+            this.comboBox1.Location = new System.Drawing.Point(23, 34);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 33);
             this.comboBox1.TabIndex = 0;
@@ -129,9 +127,9 @@ namespace ShillohHillsCollege.Win.Admin
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(12, 160);
+            this.label2.Location = new System.Drawing.Point(12, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 24);
             this.label2.TabIndex = 1;
@@ -152,12 +150,13 @@ namespace ShillohHillsCollege.Win.Admin
             this.Column9,
             this.Column8,
             this.Column10});
-            this.dgStudentInfo.Location = new System.Drawing.Point(12, 196);
+            this.dgStudentInfo.Location = new System.Drawing.Point(12, 157);
+            this.dgStudentInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgStudentInfo.Name = "dgStudentInfo";
             this.dgStudentInfo.RowHeadersVisible = false;
             this.dgStudentInfo.RowHeadersWidth = 51;
             this.dgStudentInfo.RowTemplate.Height = 29;
-            this.dgStudentInfo.Size = new System.Drawing.Size(1354, 374);
+            this.dgStudentInfo.Size = new System.Drawing.Size(1354, 299);
             this.dgStudentInfo.TabIndex = 2;
             this.dgStudentInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStudentInfo_CellClick);
             this.dgStudentInfo.SelectionChanged += new System.EventHandler(this.dgStudentInfo_SelectionChanged);
@@ -242,17 +241,19 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // RecordSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1407, 599);
+            this.ClientSize = new System.Drawing.Size(1407, 479);
             this.Controls.Add(this.dgStudentInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RecordSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search for Student Record";
+            this.Load += new System.EventHandler(this.RecordSearch_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentInfo)).EndInit();

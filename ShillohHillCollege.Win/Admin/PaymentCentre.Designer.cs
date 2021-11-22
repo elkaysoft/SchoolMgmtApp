@@ -33,7 +33,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtAutoPaymentId = new System.Windows.Forms.TextBox();
-            this.lblStudRegNum = new System.Windows.Forms.Label();
             this.lblCurrName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.dgStudentLookup = new System.Windows.Forms.DataGridView();
@@ -48,7 +47,10 @@ namespace ShillohHillsCollege.Win.Admin
             this.label4 = new System.Windows.Forms.Label();
             this.txtStudentId = new System.Windows.Forms.TextBox();
             this.pnInformation = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblStudRegNum = new System.Windows.Forms.Label();
             this.btnMakePayment = new System.Windows.Forms.Button();
+            this.lblSelOutstandingAmt = new System.Windows.Forms.Label();
             this.txtMyClass = new System.Windows.Forms.TextBox();
             this.btnAddToList = new System.Windows.Forms.Button();
             this.txtAmounttoPay = new System.Windows.Forms.TextBox();
@@ -61,7 +63,18 @@ namespace ShillohHillsCollege.Win.Admin
             this.label2 = new System.Windows.Forms.Label();
             this.drpAcademicFees = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgHistorylookup = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgStatistics = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtOutstanding = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchParam = new System.Windows.Forms.TextBox();
@@ -101,32 +114,20 @@ namespace ShillohHillsCollege.Win.Admin
             this.label17 = new System.Windows.Forms.Label();
             this.txtSelectedClass = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblSelOutstandingAmt = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgHistorylookup = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentLookup)).BeginInit();
             this.pnInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAcademicFees)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistorylookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStatistics)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDebtStudent)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnOustandingPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDebtPayment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgHistorylookup)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -143,6 +144,7 @@ namespace ShillohHillsCollege.Win.Admin
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.txtAutoPaymentId);
+            this.tabPage2.Controls.Add(this.lblStudRegNum);
             this.tabPage2.Controls.Add(this.lblCurrName);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.dgStudentLookup);
@@ -169,16 +171,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.txtAutoPaymentId.Size = new System.Drawing.Size(100, 27);
             this.txtAutoPaymentId.TabIndex = 37;
             this.txtAutoPaymentId.Visible = false;
-            // 
-            // lblStudRegNum
-            // 
-            this.lblStudRegNum.AutoSize = true;
-            this.lblStudRegNum.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudRegNum.Location = new System.Drawing.Point(158, 414);
-            this.lblStudRegNum.Name = "lblStudRegNum";
-            this.lblStudRegNum.Size = new System.Drawing.Size(67, 32);
-            this.lblStudRegNum.TabIndex = 36;
-            this.lblStudRegNum.Text = "xoxo";
             // 
             // lblCurrName
             // 
@@ -309,7 +301,6 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.pnInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnInformation.Controls.Add(this.label3);
-            this.pnInformation.Controls.Add(this.lblStudRegNum);
             this.pnInformation.Controls.Add(this.btnMakePayment);
             this.pnInformation.Controls.Add(this.lblSelOutstandingAmt);
             this.pnInformation.Controls.Add(this.txtMyClass);
@@ -322,9 +313,31 @@ namespace ShillohHillsCollege.Win.Admin
             this.pnInformation.Controls.Add(this.drpAcademicFees);
             this.pnInformation.Location = new System.Drawing.Point(706, 119);
             this.pnInformation.Name = "pnInformation";
-            this.pnInformation.Size = new System.Drawing.Size(713, 450);
+            this.pnInformation.Size = new System.Drawing.Size(713, 464);
             this.pnInformation.TabIndex = 29;
             this.pnInformation.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(12, 391);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 32);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Outstanding:";
+            // 
+            // lblStudRegNum
+            // 
+            this.lblStudRegNum.AutoSize = true;
+            this.lblStudRegNum.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudRegNum.Location = new System.Drawing.Point(1442, 551);
+            this.lblStudRegNum.Name = "lblStudRegNum";
+            this.lblStudRegNum.Size = new System.Drawing.Size(67, 32);
+            this.lblStudRegNum.TabIndex = 36;
+            this.lblStudRegNum.Text = "xoxo";
+            this.lblStudRegNum.Visible = false;
             // 
             // btnMakePayment
             // 
@@ -336,6 +349,16 @@ namespace ShillohHillsCollege.Win.Admin
             this.btnMakePayment.Text = "Submit Payment";
             this.btnMakePayment.UseVisualStyleBackColor = false;
             this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
+            // 
+            // lblSelOutstandingAmt
+            // 
+            this.lblSelOutstandingAmt.AutoSize = true;
+            this.lblSelOutstandingAmt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelOutstandingAmt.Location = new System.Drawing.Point(19, 423);
+            this.lblSelOutstandingAmt.Name = "lblSelOutstandingAmt";
+            this.lblSelOutstandingAmt.Size = new System.Drawing.Size(56, 28);
+            this.lblSelOutstandingAmt.TabIndex = 36;
+            this.lblSelOutstandingAmt.Text = "xoxo";
             // 
             // txtMyClass
             // 
@@ -464,6 +487,54 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage3.Text = "Payment History";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dgHistorylookup
+            // 
+            this.dgHistorylookup.AllowUserToAddRows = false;
+            this.dgHistorylookup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHistorylookup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.Column3});
+            this.dgHistorylookup.Location = new System.Drawing.Point(22, 175);
+            this.dgHistorylookup.Name = "dgHistorylookup";
+            this.dgHistorylookup.RowHeadersVisible = false;
+            this.dgHistorylookup.RowHeadersWidth = 51;
+            this.dgHistorylookup.RowTemplate.Height = 29;
+            this.dgHistorylookup.Size = new System.Drawing.Size(506, 188);
+            this.dgHistorylookup.TabIndex = 35;
+            this.dgHistorylookup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHistorylookup_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Reg No";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "FullName";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Current Class";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "View";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Text = "View";
+            this.Column3.UseColumnTextForButtonValue = true;
+            this.Column3.Width = 80;
+            // 
             // dgStatistics
             // 
             this.dgStatistics.AllowUserToAddRows = false;
@@ -483,6 +554,48 @@ namespace ShillohHillsCollege.Win.Admin
             this.dgStatistics.Size = new System.Drawing.Size(768, 248);
             this.dgStatistics.TabIndex = 6;
             this.dgStatistics.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Session";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Term";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Class";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Description";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Amount";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date Created";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // txtOutstanding
             // 
@@ -535,6 +648,7 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dgDebtStudent);
             this.tabPage1.Controls.Add(this.lblPaymentId);
@@ -872,115 +986,15 @@ namespace ShillohHillsCollege.Win.Admin
             this.txtSelectedClass.Size = new System.Drawing.Size(169, 30);
             this.txtSelectedClass.TabIndex = 10;
             // 
-            // lblSelOutstandingAmt
+            // textBox1
             // 
-            this.lblSelOutstandingAmt.AutoSize = true;
-            this.lblSelOutstandingAmt.Location = new System.Drawing.Point(100, 405);
-            this.lblSelOutstandingAmt.Name = "lblSelOutstandingAmt";
-            this.lblSelOutstandingAmt.Size = new System.Drawing.Size(43, 20);
-            this.lblSelOutstandingAmt.TabIndex = 36;
-            this.lblSelOutstandingAmt.Text = "xoxo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(5, 414);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 32);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Outstanding:";
-            // 
-            // dgHistorylookup
-            // 
-            this.dgHistorylookup.AllowUserToAddRows = false;
-            this.dgHistorylookup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHistorylookup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.Column3});
-            this.dgHistorylookup.Location = new System.Drawing.Point(22, 175);
-            this.dgHistorylookup.Name = "dgHistorylookup";
-            this.dgHistorylookup.RowHeadersVisible = false;
-            this.dgHistorylookup.RowHeadersWidth = 51;
-            this.dgHistorylookup.RowTemplate.Height = 29;
-            this.dgHistorylookup.Size = new System.Drawing.Size(506, 188);
-            this.dgHistorylookup.TabIndex = 35;
-            this.dgHistorylookup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHistorylookup_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Reg No";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "FullName";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Current Class";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "View";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Text = "View";
-            this.Column3.UseColumnTextForButtonValue = true;
-            this.Column3.Width = 80;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Session";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Term";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Class";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Description";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Amount";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date Created";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(620, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(313, 38);
+            this.textBox1.TabIndex = 37;
             // 
             // PaymentCentre
             // 
@@ -1005,6 +1019,7 @@ namespace ShillohHillsCollege.Win.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dgAcademicFees)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistorylookup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStatistics)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1014,7 +1029,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.pnOustandingPayment.ResumeLayout(false);
             this.pnOustandingPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDebtPayment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgHistorylookup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1105,5 +1119,6 @@ namespace ShillohHillsCollege.Win.Admin
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

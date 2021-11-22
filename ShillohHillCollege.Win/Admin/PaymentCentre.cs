@@ -129,6 +129,7 @@ namespace ShillohHillsCollege.Win.Admin
                 string pId = txtAutoPaymentId.Text;
                 UploadStudentPayment();
                 SettingsCommand.UpdateAutoPaymentId();
+                lblCurrName.Visible = false;
                 var receipt = new FeeReceipt();
                 receipt.lblInvoiceId.Text = pId;
                 receipt.Show();
@@ -171,12 +172,11 @@ namespace ShillohHillsCollege.Win.Admin
                     var outstandingBalance = PaymentQuery.GetStudentCurrentBalance(lblStudRegNum.Text);
                     var newBalance = outstandingBalance + balance;
 
-                    PaymentCommand.AddPaymentHistory(lblStudRegNum.Text, "",
-                        "", "", paidAmount, paymentObj.description, txtAutoPaymentId.Text);
+                    PaymentCommand.AddPaymentHistory(lblStudRegNum.Text, txtCurrSess.Text,
+                        txtCurrTerm.Text, txtMyClass.Text, paidAmount, paymentObj.description, txtAutoPaymentId.Text);
                     PaymentCommand.UpdateStudentOutstandingBalance(lblStudRegNum.Text, newBalance);
                     insertionCount += 1;
-                }
-                
+                }                
             }
             
 

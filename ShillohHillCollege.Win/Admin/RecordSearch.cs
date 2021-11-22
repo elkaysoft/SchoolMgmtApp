@@ -75,6 +75,20 @@ namespace ShillohHillsCollege.Win.Admin
             }
         }
 
+        private void SetClassesDropdown()
+        {
+            var resp = StudentQuery.GetCollegeClasses().Result;
+            var allClass = resp.data;
+            if (allClass != null)
+            {
+                drpClass.Items.Clear();
+                allClass.ForEach(p =>
+                {
+                    drpClass.Items.Add(p.Name);
+                });
+            }
+        }
+
         private void dgStudentInfo_SelectionChanged(object sender, EventArgs e)
         {
             //int selectedCellCount = dgStudentInfo.GetCellCount(DataGridViewElementStates.Selected);
@@ -96,6 +110,11 @@ namespace ShillohHillsCollege.Win.Admin
                 payHistory.Text = $"Payment history for ({studentId})";
                 payHistory.ShowDialog();
             }
+        }
+
+        private void RecordSearch_Load(object sender, EventArgs e)
+        {
+            SetClassesDropdown();
         }
     }
 }
