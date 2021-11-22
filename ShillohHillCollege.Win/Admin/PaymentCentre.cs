@@ -265,20 +265,20 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void SetPaymentForDebt(string studentId)
         {
-            var paymentStats = PaymentQuery.GetOustandingDebtById(studentId);
-            if (paymentStats.Any())
-            {
-                foreach (var payment in paymentStats)
-                {
-                    dgDebtPayment.Rows.Add(payment.Id, payment.session, payment.term, payment.currentClass, payment.totalAmount,
-                        payment.AmountPaid, payment.outstandingAmount);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No Record found",
-                       "Information Center", MessageBoxButtons.OK);
-            }
+            //var paymentStats = PaymentQuery.GetOustandingDebtById(studentId);
+            //if (paymentStats.Any())
+            //{
+            //    foreach (var payment in paymentStats)
+            //    {
+            //        dgDebtPayment.Rows.Add(payment.Id, payment.session, payment.term, payment.currentClass, payment.totalAmount,
+            //            payment.AmountPaid, payment.outstandingAmount);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No Record found",
+            //           "Information Center", MessageBoxButtons.OK);
+            //}
         }
 
 
@@ -312,63 +312,63 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void dgDebtPayment_SelectionChanged(object sender, EventArgs e)
         {
-            bool selectionFlg = dgDebtPayment.CurrentRow.Selected;
+            //bool selectionFlg = dgDebtPayment.CurrentRow.Selected;
 
-            if (selectionFlg && dgDebtPayment.Rows.Count > 0)
-            {
-                lblPaymentId.Text = dgDebtPayment.CurrentRow.Cells[0]?.Value.ToString();
-                var selSession = dgDebtPayment.CurrentRow.Cells[1]?.Value.ToString();
-                var selTerm = dgDebtPayment.CurrentRow.Cells[2]?.Value.ToString();
-                var selClass = dgDebtPayment.CurrentRow.Cells[3]?.Value.ToString();
-                var amountPaid = dgDebtPayment.CurrentRow.Cells[5]?.Value.ToString();
-                var balance = dgDebtPayment.CurrentRow.Cells[6]?.Value.ToString();                
+            //if (selectionFlg && dgDebtPayment.Rows.Count > 0)
+            //{
+            //    lblPaymentId.Text = dgDebtPayment.CurrentRow.Cells[0]?.Value.ToString();
+            //    var selSession = dgDebtPayment.CurrentRow.Cells[1]?.Value.ToString();
+            //    var selTerm = dgDebtPayment.CurrentRow.Cells[2]?.Value.ToString();
+            //    var selClass = dgDebtPayment.CurrentRow.Cells[3]?.Value.ToString();
+            //    var amountPaid = dgDebtPayment.CurrentRow.Cells[5]?.Value.ToString();
+            //    var balance = dgDebtPayment.CurrentRow.Cells[6]?.Value.ToString();                
 
-                txtSelectedAmount.Text = amountPaid;
-                txtSelectedBalance.Text = balance;
-                txtSelectedSession.Text = selSession;
-                txtSelectedTerm.Text = selTerm;
-                txtSelectedClass.Text = selClass;
-            }
+            //    txtSelectedAmount.Text = amountPaid;
+            //    txtSelectedBalance.Text = balance;
+            //    txtSelectedSession.Text = selSession;
+            //    txtSelectedTerm.Text = selTerm;
+            //    txtSelectedClass.Text = selClass;
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtSelectedBalance.Text == "" || txtSelectedAmount.Text == "" || txtDebt.Text == "")
-                {
-                    MessageBox.Show("Oustanding Amount/Amount Paid cannot be empty",
-                           "Information Center", MessageBoxButtons.OK);
-                    return;
-                }
+                //if (txtSelectedBalance.Text == "" || txtSelectedAmount.Text == "" || txtDebt.Text == "")
+                //{
+                //    MessageBox.Show("Oustanding Amount/Amount Paid cannot be empty",
+                //           "Information Center", MessageBoxButtons.OK);
+                //    return;
+                //}
 
-                decimal amtPaid = Convert.ToDecimal(txtSelectedAmount.Text);
-                decimal outstanding = Convert.ToDecimal(txtSelectedBalance.Text);
-                decimal creditAmt = Convert.ToDecimal(txtDebt.Text);
-                var studentObj = label1.Text;
-                var studentId = studentObj.Split('-')[1].ToString();
+                //decimal amtPaid = Convert.ToDecimal(txtSelectedAmount.Text);
+                //decimal outstanding = Convert.ToDecimal(txtSelectedBalance.Text);
+                //decimal creditAmt = Convert.ToDecimal(txtDebt.Text);
+                //var studentObj = label1.Text;
+                //var studentId = studentObj.Split('-')[1].ToString();
 
-                if (outstanding == 0)
-                {
-                    MessageBox.Show("You do not have an outstanding amount for the selected record",
-                          "Information Center", MessageBoxButtons.OK);
-                    return;
-                }
+                //if (outstanding == 0)
+                //{
+                //    MessageBox.Show("You do not have an outstanding amount for the selected record",
+                //          "Information Center", MessageBoxButtons.OK);
+                //    return;
+                //}
 
-                var currentBalance = PaymentQuery.GetStudentCurrentBalance(studentId);
-                var newBalance = currentBalance - creditAmt;
-                PaymentCommand.AddPaymentHistory(studentId, txtSelectedSession.Text, txtSelectedTerm.Text,
-                    txtSelectedClass.Text, creditAmt, "Debt Payment", "");
-                PaymentCommand.UpdateStudentOutstandingBalance(studentId, newBalance);
-                PaymentCommand.UpdateAmountPaidAfterDebt(lblPaymentId.Text, creditAmt);
+                //var currentBalance = PaymentQuery.GetStudentCurrentBalance(studentId);
+                //var newBalance = currentBalance - creditAmt;
+                //PaymentCommand.AddPaymentHistory(studentId, txtSelectedSession.Text, txtSelectedTerm.Text,
+                //    txtSelectedClass.Text, creditAmt, "Debt Payment", "");
+                //PaymentCommand.UpdateStudentOutstandingBalance(studentId, newBalance);
+                //PaymentCommand.UpdateAmountPaidAfterDebt(lblPaymentId.Text, creditAmt);
 
-                MessageBox.Show("Payment added successfully!",
-                         "Information Center", MessageBoxButtons.OK);
+                //MessageBox.Show("Payment added successfully!",
+                //         "Information Center", MessageBoxButtons.OK);
 
-                dgDebtPayment.Rows.Clear();
-                txtDebt.Text = "";
+                //dgDebtPayment.Rows.Clear();
+                //txtDebt.Text = "";
               
-                SetPaymentForDebt(studentId);
+                //SetPaymentForDebt(studentId);
             }
             catch(Exception ex)
             {
@@ -485,31 +485,7 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void dgDebtStudent_SelectionChanged(object sender, EventArgs e)
         {
-            try
-            {
-                var registrationno = dgDebtStudent.CurrentRow.Cells[0].Value.ToString();
-                var studentname = dgDebtStudent.CurrentRow.Cells[1].Value.ToString();
-                var availablebalance = PaymentQuery.GetStudentCurrentBalance(registrationno);
-                if (availablebalance > 0)
-                {
-                    label1.Text = $"{studentname} - {registrationno}";
-                    label1.Visible = true;
-                    dgDebtPayment.Rows.Clear();
-                    pnOustandingPayment.Visible = true;
-                    SetPaymentForDebt(registrationno);
-                }
-                else
-                {
-                    pnOustandingPayment.Visible = false;
-                    label1.Visible = false;
-                    MessageBox.Show("This student has no oustanding balance",
-                           "information center", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
+           
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -525,6 +501,38 @@ namespace ShillohHillsCollege.Win.Admin
                 dgStatistics.Rows.Clear();
                 dgStatistics.Visible = true;
                 SetPaymentHistory(registrationNo);               
+            }
+        }
+
+        private void dgDebtStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgDebtStudent.Columns[3].Index)
+            {
+                try
+                {
+                    var registrationno = dgDebtStudent.CurrentRow.Cells[0].Value.ToString();
+                    var studentname = dgDebtStudent.CurrentRow.Cells[1].Value.ToString();
+                    var availablebalance = PaymentQuery.GetStudentCurrentBalance(registrationno);
+                    if (availablebalance > 0)
+                    {
+                        label1.Text = $"{studentname}";
+                        label11.Text = registrationno;
+                        pnOustandingPayment.Visible = true;
+                        txtTotalBalance.Text = availablebalance.ToString();
+                        //SetPaymentForDebt(registrationno);
+                    }
+                    else
+                    {
+                        pnOustandingPayment.Visible = false;
+                        label1.Visible = false;
+                        MessageBox.Show("This student has no oustanding balance",
+                               "information center", MessageBoxButtons.OK);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
             }
         }
     }
