@@ -161,7 +161,7 @@ namespace ShillohHillsCollege.Win.Bursary
                 drpSession.Items.Clear();
                 resp.ForEach(p =>
                 {
-                    drpSession.Items.Add(p.Name);
+                    drpSession.Items.Add(p);
                 });
 
             }

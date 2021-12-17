@@ -129,7 +129,7 @@ namespace ShillohHillsCollege.Core.Commands
         {
             try
             {
-                var sql = "INSERT INTO PaymentHistory(StudentId,Session,Term,StudentClass,AmountPaid, description, paymentId) VALUES(@studentId,@sessionName,@term,@klass,@amtPaid,@desc, @payId)";
+                var sql = "INSERT INTO PaymentHistory(StudentId,Session,Term,StudentClass,AmountPaid, description, paymentId, CreatedOn) VALUES(@studentId,@sessionName,@term,@klass,@amtPaid,@desc, @payId, @createdOn)";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
@@ -141,7 +141,8 @@ namespace ShillohHillsCollege.Core.Commands
                         amtPaid = amount,
                         studentId = studentId,
                         desc = description,
-                        payId = paymentId
+                        payId = paymentId,
+                        createdOn = helper.FormatDateV2(DateTime.Now)
                     });
 
                 }

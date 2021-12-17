@@ -63,7 +63,8 @@ namespace ShillohHillsCollege.Win.Admin
                         IsDeleted = false,
                         ParentMobile = txtParentMobile.Text,
                         ParentName = txtParent.Text,
-                        RegistrationNo = regNumber
+                        RegistrationNo = regNumber,
+                        CreatedOn = DateTime.Now.Date.ToString("yyyy-MM-dd")
                     };
 
                     var uploadResult = StudentsCommand.AddSingleStudent(requestObj);

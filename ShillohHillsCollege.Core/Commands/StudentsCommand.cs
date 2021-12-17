@@ -19,7 +19,7 @@ namespace ShillohHillsCollege.Core.Commands
 
             try
             {
-                var sql = "INSERT INTO StudentInfo(RegistrationNo,FullName,Gender,DoB,CurrentClass,ParentName,ParentMobile,OutstandingBalance,IsDeleted,CreatedBy) VALUES(@regNumber,@FullName,@Gender,@Dob,@CurrentClass,@ParentName,@ParentMobile,@OutstandingBalance,@IsDeleted,@Createdby)";
+                var sql = "INSERT INTO StudentInfo(RegistrationNo,FullName,Gender,DoB,CurrentClass,ParentName,ParentMobile,OutstandingBalance,IsDeleted,CreatedBy,CreatedOn) VALUES(@regNumber,@FullName,@Gender,@Dob,@CurrentClass,@ParentName,@ParentMobile,@OutstandingBalance,@IsDeleted,@Createdby,@CreatedOn)";
                 using(var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
@@ -34,7 +34,8 @@ namespace ShillohHillsCollege.Core.Commands
                         ParentMobile = request.ParentMobile,
                         OutstandingBalance = 0,
                         IsDeleted = false,
-                        Createdby = request.CreatedBy
+                        Createdby = request.CreatedBy,
+                        CreatedOn = request.CreatedOn
                     });
 
                     if(resp > 0)
@@ -91,8 +92,7 @@ namespace ShillohHillsCollege.Core.Commands
             }
 
             return result;
-        }
-               
+        }              
 
         public static void MigratetudentsToAnotherClass(string currentClass, string newClass)
         {

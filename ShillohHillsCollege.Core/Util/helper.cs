@@ -60,6 +60,14 @@ namespace ShillohHillsCollege.Core.Util
             return result;
         }
 
+        public static string FormatDateV2(DateTime dateVal)
+        {
+            string result = "";
+
+            result = dateVal.ToString("yyyy-MM-dd");
+            return result;
+        }
+
 
         public static string EncodeToBase64(string plainText)
         {

@@ -11,7 +11,6 @@ namespace ShillohHillsCollege.Win.Admin
     public partial class PaymentCentre : Form
     {
        
-
         public PaymentCentre()
         {
             InitializeComponent();
@@ -130,10 +129,12 @@ namespace ShillohHillsCollege.Win.Admin
                 UploadStudentPayment();
                 SettingsCommand.UpdateAutoPaymentId();
                 lblCurrName.Visible = false;
-                var receipt = new FeeReceipt();
-                receipt.lblInvoiceId.Text = pId;
-                receipt.Show();
-                this.Hide();
+                MessageBox.Show("Record uploaded successfully",
+                       "Information Center", MessageBoxButtons.OK);
+                //var receipt = new FeeReceipt();
+                //receipt.lblInvoiceId.Text = pId;
+                //receipt.Show();
+                //this.Hide();
             }
             else
             {

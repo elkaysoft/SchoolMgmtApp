@@ -136,7 +136,7 @@ namespace ShillohHillsCollege.Win.Admin
                 drpSession.Items.Clear();
                 resp.ForEach(p =>
                 {
-                    drpSession.Items.Add(p.Name);
+                    drpSession.Items.Add(p);
                 });
                 
             }
@@ -224,8 +224,14 @@ namespace ShillohHillsCollege.Win.Admin
             SetClassesDropdown();
             txtOldPassword.Text = GetPassword();
 
-            txtCurrentSession.Text = StudentQuery.GetCurrentAcademicSession().Name.ToString();
-            txtSessionEnd.Text = StudentQuery.GetCurrentAcademicSession().endDate.ToString("dd-MM-yyyy");
+            var sessionObj = StudentQuery.GetCurrentAcademicSession();
+            if(sessionObj.Name != null)
+            {
+                txtCurrentSession.Text = sessionObj.Name.ToString();
+                txtSessionEnd.Text = sessionObj.endDate.ToString("dd-MM-yyyy");
+            }
+
+            
         }
 
         string GetPassword()
@@ -317,16 +323,16 @@ namespace ShillohHillsCollege.Win.Admin
             }
 
 
-            UploadAcademicTerm();          
+            UploadAcademicTerm(fromDate, endDate);          
 
         }
 
-        void UploadAcademicTerm()
+        void UploadAcademicTerm(DateTime fromDate, DateTime toDate)
         {
             var uploadObj = new AddAcademicTermDto
             {
-                EndDate = helper.FormatDate(dtEndTerm.Text),
-                StartDate = helper.FormatDate(dtStartTerm.Text),
+                EndDate = helper.FormatDateV2(toDate),
+                StartDate = helper.FormatDateV2(fromDate),
                 Session = txtTermSession.Text,
                 Term = drpAcademicTerm.SelectedItem.ToString()
             };

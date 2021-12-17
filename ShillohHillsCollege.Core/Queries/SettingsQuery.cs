@@ -159,33 +159,25 @@ namespace ShillohHillsCollege.Core.Queries
             return response;
         }
 
-        public async static Task<List<SessionDto>> GetAcademicSession()
+        public async static Task<List<string>> GetAcademicSession()
         {
-            var result = new List<SessionDto>();
+            var result = new List<string>();
             try
             {
-                var sql = "select * from AcademicSessions order by StartDate desc";
+                var sql = "select distinct([Session]) from AcademicTerm";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
 
-                    var resp = await connection.QueryAsync<SessionDto>(sql).ConfigureAwait(false);
+                    var resp = await connection.QueryAsync<string>(sql).ConfigureAwait(false);
 
                     if (resp != null)
                     {
                         foreach(var ses in resp)
                         {
-                            result.Add(new SessionDto
-                            {
-                                Name = ses.Name,
-                                DateCreated = ses.DateCreated,
-                                endDate = ses.endDate,
-                                startDate = ses.startDate,
-                                IsActive = ses.IsActive
-                            });
+                            result.Add(ses);
                         }
                     }
-
                 }
             }
             catch(Exception ex)

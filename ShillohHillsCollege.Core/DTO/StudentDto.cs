@@ -36,6 +36,7 @@ namespace ShillohHillsCollege.Core.DTO
         public string ParentMobile { get; set; }
         public bool IsDeleted { get; set; }
         public string CreatedBy { get; set; }
+        public string CreatedOn { get; set; }
 
     }
 
