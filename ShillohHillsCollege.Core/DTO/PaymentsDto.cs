@@ -59,15 +59,15 @@ namespace ShillohHillsCollege.Core.DTO
     }
 
     public class PaymentHistoryDto
-    {
-        public string session { get; set; }
-        public string term { get; set; }
-        public string studentClass { get; set; }
+    {       
         public decimal amountPaid { get; set; }
+        public decimal outstandingAmount { get; set; }
         public string studentId { get; set; }
         public DateTime createdOn { get; set; }
+        public string createdBy { get; set; }
         public string dateCreated { get; set; }
         public string description { get; set; }
+        public string paymentId { get; set; }
     }
 
 

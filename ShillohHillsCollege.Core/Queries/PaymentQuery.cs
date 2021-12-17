@@ -92,9 +92,10 @@ namespace ShillohHillsCollege.Core.Queries
                             {
                                 studentId = r.studentId,
                                 amountPaid = r.amountPaid,
-                                session = r.session,
-                                studentClass = r.studentClass,
-                                term = r.term,
+                                outstandingAmount = r.outstandingAmount,
+                                createdOn = r.createdOn,
+                                createdBy = r.createdBy,
+                                paymentId = r.paymentId,
                                 dateCreated = r.createdOn.ToString("dd-MM-yyyy"),
                                 description = r.description
                             });

@@ -83,6 +83,12 @@
     <Compile Include="Admin\adminDashboard.Designer.cs">
       <DependentUpon>adminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\changeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\changeManagement.Designer.cs">
+      <DependentUpon>changeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\DebtHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\adminDashboard.resx">
       <DependentUpon>adminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\changeManagement.resx">
+      <DependentUpon>changeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\DebtHistory.resx">
       <DependentUpon>DebtHistory.cs</DependentUpon>

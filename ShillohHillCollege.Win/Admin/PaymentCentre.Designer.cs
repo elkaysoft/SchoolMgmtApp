@@ -33,6 +33,7 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtAutoPaymentId = new System.Windows.Forms.TextBox();
+            this.lblStudRegNum = new System.Windows.Forms.Label();
             this.lblCurrName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.dgStudentLookup = new System.Windows.Forms.DataGridView();
@@ -48,7 +49,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.txtStudentId = new System.Windows.Forms.TextBox();
             this.pnInformation = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblStudRegNum = new System.Windows.Forms.Label();
             this.btnMakePayment = new System.Windows.Forms.Button();
             this.lblSelOutstandingAmt = new System.Windows.Forms.Label();
             this.txtMyClass = new System.Windows.Forms.TextBox();
@@ -69,37 +69,34 @@ namespace ShillohHillsCollege.Win.Admin
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgStatistics = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtOutstanding = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchParam = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pnOustandingPayment = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtdebtRepaymentAmt = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTotalBalance = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.dgDebtStudent = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblPaymentId = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtSearchId = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtTotalBalance = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pnOustandingPayment = new System.Windows.Forms.Panel();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label11 = new System.Windows.Forms.Label();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudentLookup)).BeginInit();
@@ -109,9 +106,9 @@ namespace ShillohHillsCollege.Win.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dgHistorylookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStatistics)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.pnOustandingPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDebtStudent)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.pnOustandingPayment.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -156,13 +153,24 @@ namespace ShillohHillsCollege.Win.Admin
             this.txtAutoPaymentId.TabIndex = 37;
             this.txtAutoPaymentId.Visible = false;
             // 
+            // lblStudRegNum
+            // 
+            this.lblStudRegNum.AutoSize = true;
+            this.lblStudRegNum.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudRegNum.Location = new System.Drawing.Point(1442, 551);
+            this.lblStudRegNum.Name = "lblStudRegNum";
+            this.lblStudRegNum.Size = new System.Drawing.Size(66, 31);
+            this.lblStudRegNum.TabIndex = 36;
+            this.lblStudRegNum.Text = "xoxo";
+            this.lblStudRegNum.Visible = false;
+            // 
             // lblCurrName
             // 
             this.lblCurrName.AutoSize = true;
             this.lblCurrName.Font = new System.Drawing.Font("Segoe UI Semibold", 28.2F, System.Drawing.FontStyle.Bold);
             this.lblCurrName.Location = new System.Drawing.Point(706, 54);
             this.lblCurrName.Name = "lblCurrName";
-            this.lblCurrName.Size = new System.Drawing.Size(40, 65);
+            this.lblCurrName.Size = new System.Drawing.Size(38, 62);
             this.lblCurrName.TabIndex = 35;
             this.lblCurrName.Text = ".";
             this.lblCurrName.Visible = false;
@@ -308,20 +316,9 @@ namespace ShillohHillsCollege.Win.Admin
             this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(12, 391);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 32);
+            this.label3.Size = new System.Drawing.Size(148, 31);
             this.label3.TabIndex = 37;
             this.label3.Text = "Outstanding:";
-            // 
-            // lblStudRegNum
-            // 
-            this.lblStudRegNum.AutoSize = true;
-            this.lblStudRegNum.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudRegNum.Location = new System.Drawing.Point(1442, 551);
-            this.lblStudRegNum.Name = "lblStudRegNum";
-            this.lblStudRegNum.Size = new System.Drawing.Size(67, 32);
-            this.lblStudRegNum.TabIndex = 36;
-            this.lblStudRegNum.Text = "xoxo";
-            this.lblStudRegNum.Visible = false;
             // 
             // btnMakePayment
             // 
@@ -459,10 +456,8 @@ namespace ShillohHillsCollege.Win.Admin
             // 
             this.tabPage3.Controls.Add(this.dgHistorylookup);
             this.tabPage3.Controls.Add(this.dgStatistics);
-            this.tabPage3.Controls.Add(this.txtOutstanding);
             this.tabPage3.Controls.Add(this.btnSearch);
             this.tabPage3.Controls.Add(this.txtSearchParam);
-            this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
@@ -525,70 +520,18 @@ namespace ShillohHillsCollege.Win.Admin
             this.dgStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStatistics.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
-            this.Column9,
-            this.Column10,
             this.Column1,
             this.Column12,
+            this.Column7,
             this.Column2});
             this.dgStatistics.Location = new System.Drawing.Point(708, 175);
             this.dgStatistics.Name = "dgStatistics";
             this.dgStatistics.RowHeadersVisible = false;
             this.dgStatistics.RowHeadersWidth = 51;
             this.dgStatistics.RowTemplate.Height = 29;
-            this.dgStatistics.Size = new System.Drawing.Size(768, 248);
+            this.dgStatistics.Size = new System.Drawing.Size(788, 248);
             this.dgStatistics.TabIndex = 6;
             this.dgStatistics.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Session";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Term";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Class";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Description";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Amount";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date Created";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // txtOutstanding
-            // 
-            this.txtOutstanding.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtOutstanding.Location = new System.Drawing.Point(986, 474);
-            this.txtOutstanding.Name = "txtOutstanding";
-            this.txtOutstanding.ReadOnly = true;
-            this.txtOutstanding.Size = new System.Drawing.Size(232, 34);
-            this.txtOutstanding.TabIndex = 5;
             // 
             // btnSearch
             // 
@@ -607,17 +550,6 @@ namespace ShillohHillsCollege.Win.Admin
             this.txtSearchParam.Name = "txtSearchParam";
             this.txtSearchParam.Size = new System.Drawing.Size(213, 34);
             this.txtSearchParam.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(775, 477);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 28);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Overall Outstanding";
             // 
             // label6
             // 
@@ -643,6 +575,49 @@ namespace ShillohHillsCollege.Win.Admin
             this.tabPage1.Text = "Oustanding Payment";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pnOustandingPayment
+            // 
+            this.pnOustandingPayment.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnOustandingPayment.Controls.Add(this.label11);
+            this.pnOustandingPayment.Controls.Add(this.txtdebtRepaymentAmt);
+            this.pnOustandingPayment.Controls.Add(this.button2);
+            this.pnOustandingPayment.Controls.Add(this.label1);
+            this.pnOustandingPayment.Controls.Add(this.txtTotalBalance);
+            this.pnOustandingPayment.Controls.Add(this.label9);
+            this.pnOustandingPayment.Controls.Add(this.label7);
+            this.pnOustandingPayment.Location = new System.Drawing.Point(659, 167);
+            this.pnOustandingPayment.Name = "pnOustandingPayment";
+            this.pnOustandingPayment.Size = new System.Drawing.Size(580, 303);
+            this.pnOustandingPayment.TabIndex = 41;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(362, 68);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 20);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "label11";
+            this.label11.Visible = false;
+            // 
+            // txtdebtRepaymentAmt
+            // 
+            this.txtdebtRepaymentAmt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdebtRepaymentAmt.Location = new System.Drawing.Point(28, 181);
+            this.txtdebtRepaymentAmt.Name = "txtdebtRepaymentAmt";
+            this.txtdebtRepaymentAmt.Size = new System.Drawing.Size(244, 34);
+            this.txtdebtRepaymentAmt.TabIndex = 39;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(25, 232);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 41);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "Make Payment";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -653,6 +628,36 @@ namespace ShillohHillsCollege.Win.Admin
             this.label1.TabIndex = 36;
             this.label1.Text = ".";
             this.label1.Visible = false;
+            // 
+            // txtTotalBalance
+            // 
+            this.txtTotalBalance.BackColor = System.Drawing.Color.SteelBlue;
+            this.txtTotalBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalBalance.Location = new System.Drawing.Point(28, 95);
+            this.txtTotalBalance.Name = "txtTotalBalance";
+            this.txtTotalBalance.ReadOnly = true;
+            this.txtTotalBalance.Size = new System.Drawing.Size(313, 38);
+            this.txtTotalBalance.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 23);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Amount to pay";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 23);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Outstanding Amount";
             // 
             // dgDebtStudent
             // 
@@ -673,6 +678,38 @@ namespace ShillohHillsCollege.Win.Admin
             this.dgDebtStudent.TabIndex = 34;
             this.dgDebtStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDebtStudent_CellContentClick);
             this.dgDebtStudent.SelectionChanged += new System.EventHandler(this.dgDebtStudent_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Reg No";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "FullName";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Current Class";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "View";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column6.Text = "View";
+            this.Column6.UseColumnTextForButtonValue = true;
+            this.Column6.Width = 70;
             // 
             // lblPaymentId
             // 
@@ -725,109 +762,40 @@ namespace ShillohHillsCollege.Win.Admin
             this.label12.TabIndex = 4;
             this.label12.Text = "Keyword";
             // 
-            // txtTotalBalance
+            // Column8
             // 
-            this.txtTotalBalance.BackColor = System.Drawing.Color.SteelBlue;
-            this.txtTotalBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalBalance.Location = new System.Drawing.Point(28, 95);
-            this.txtTotalBalance.Name = "txtTotalBalance";
-            this.txtTotalBalance.ReadOnly = true;
-            this.txtTotalBalance.Size = new System.Drawing.Size(313, 38);
-            this.txtTotalBalance.TabIndex = 37;
+            this.Column8.HeaderText = "Payment Id";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
             // 
-            // label7
+            // Column1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 23);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Outstanding Amount";
+            this.Column1.HeaderText = "Description";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
-            // label9
+            // Column12
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 23);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Amount to pay";
+            this.Column12.HeaderText = "Amount";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 125;
             // 
-            // textBox1
+            // Column7
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(28, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 34);
-            this.textBox1.TabIndex = 39;
+            this.Column7.HeaderText = "Outstanding";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 175;
             // 
-            // button2
+            // Column2
             // 
-            this.button2.Location = new System.Drawing.Point(25, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 41);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "Make Payment";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pnOustandingPayment
-            // 
-            this.pnOustandingPayment.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnOustandingPayment.Controls.Add(this.label11);
-            this.pnOustandingPayment.Controls.Add(this.textBox1);
-            this.pnOustandingPayment.Controls.Add(this.button2);
-            this.pnOustandingPayment.Controls.Add(this.label1);
-            this.pnOustandingPayment.Controls.Add(this.txtTotalBalance);
-            this.pnOustandingPayment.Controls.Add(this.label9);
-            this.pnOustandingPayment.Controls.Add(this.label7);
-            this.pnOustandingPayment.Location = new System.Drawing.Point(659, 167);
-            this.pnOustandingPayment.Name = "pnOustandingPayment";
-            this.pnOustandingPayment.Size = new System.Drawing.Size(580, 303);
-            this.pnOustandingPayment.TabIndex = 41;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Reg No";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "FullName";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Current Class";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "View";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column6.Text = "View";
-            this.Column6.UseColumnTextForButtonValue = true;
-            this.Column6.Width = 70;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(362, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 20);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "label11";
-            this.label11.Visible = false;
+            this.Column2.HeaderText = "Date Created";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 170;
             // 
             // PaymentCentre
             // 
@@ -856,11 +824,11 @@ namespace ShillohHillsCollege.Win.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dgStatistics)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.pnOustandingPayment.ResumeLayout(false);
+            this.pnOustandingPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDebtStudent)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnOustandingPayment.ResumeLayout(false);
-            this.pnOustandingPayment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -879,8 +847,6 @@ namespace ShillohHillsCollege.Win.Admin
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchParam;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtOutstanding;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgStatistics;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -920,16 +886,10 @@ namespace ShillohHillsCollege.Win.Admin
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TextBox txtTotalBalance;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtdebtRepaymentAmt;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pnOustandingPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -937,5 +897,10 @@ namespace ShillohHillsCollege.Win.Admin
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewButtonColumn Column6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

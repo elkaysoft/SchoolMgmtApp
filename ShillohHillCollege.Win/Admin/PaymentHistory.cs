@@ -26,7 +26,7 @@ namespace ShillohHillsCollege.Win.Admin
                 {
                     foreach (var payment in paymentHistoryObj)
                     {
-                        dgPaymentHistory.Rows.Add(payment.session, payment.term, payment.studentClass, payment.amountPaid, payment.description, payment.dateCreated);
+                        dgPaymentHistory.Rows.Add(payment.amountPaid, payment.description, payment.dateCreated);
                     }
                 }
                 else

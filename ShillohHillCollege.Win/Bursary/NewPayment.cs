@@ -106,8 +106,7 @@ namespace ShillohHillsCollege.Win.Bursary
                     var outstandingBalance = PaymentQuery.GetStudentCurrentBalance(txtStudentId.Text);
                     var newBalance = outstandingBalance + balance;
 
-                    PaymentCommand.AddPaymentHistory(txtStudentId.Text, drpSession.SelectedItem.ToString(),
-                        drpTerm.SelectedItem.ToString(), drpClass.SelectedItem.ToString(), paidAmount, paymentObj.description, txtAutoPaymentId.Text);
+                    //PaymentCommand.AddPaymentHistory(txtStudentId.Text, paidAmount, paymentObj.description, txtAutoPaymentId.Text);
                     PaymentCommand.UpdateStudentOutstandingBalance(txtStudentId.Text, newBalance);
                     insertionCount += 1;
                 }

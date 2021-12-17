@@ -125,24 +125,23 @@ namespace ShillohHillsCollege.Core.Commands
             }
         }
 
-        public static void AddPaymentHistory(string studentId, string session, string terms, string klass, decimal amount, string description, string paymentId)
+        public static void AddPaymentHistory(string studentId, decimal amount, decimal outstandingAmt, string description, string paymentId, string createdBy)
         {
             try
             {
-                var sql = "INSERT INTO PaymentHistory(StudentId,Session,Term,StudentClass,AmountPaid, description, paymentId, CreatedOn) VALUES(@studentId,@sessionName,@term,@klass,@amtPaid,@desc, @payId, @createdOn)";
+                var sql = "INSERT INTO PaymentHistory(StudentId, description, AmountPaid, OutstandingAmount, paymentId, CreatedOn, CreatedBy) VALUES(@studentId, @desc, @amtPaid, @outstanding, @payId, @createdOn, @createdBy)";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
                     var resp = connection.Execute(sql, new
                     {
-                        sessionName = session,
-                        term = terms,
-                        klass = klass,
                         amtPaid = amount,
                         studentId = studentId,
                         desc = description,
                         payId = paymentId,
-                        createdOn = helper.FormatDateV2(DateTime.Now)
+                        createdOn = helper.FormatDateV2(DateTime.Now),
+                        createdBy = createdBy,
+                        outstanding = outstandingAmt
                     });
 
                 }
@@ -153,27 +152,27 @@ namespace ShillohHillsCollege.Core.Commands
             }
         }
 
-        public static void UpdateAmountPaidAfterDebt(string paymentId, decimal amount)
-        {
-            try
-            {
-                var sql = "UPDATE FeesPayment SET AmountPaid = AmountPaid + @amt, OutstandingAmount = OutstandingAmount - @amt where Id=@id";
-                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
-                {
-                    connection.Open();
-                    var resp = connection.Execute(sql, new
-                    {
-                        id = paymentId,
-                        amt = amount,
-                    });
+        //public static void UpdateAmountPaidAfterDebt(string paymentId, decimal amount)
+        //{
+        //    try
+        //    {
+        //        var sql = "UPDATE FeesPayment SET AmountPaid = AmountPaid + @amt, OutstandingAmount = OutstandingAmount - @amt where Id=@id";
+        //        using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+        //        {
+        //            connection.Open();
+        //            var resp = connection.Execute(sql, new
+        //            {
+        //                id = paymentId,
+        //                amt = amount,
+        //            });
 
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-        }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //}
 
 
 

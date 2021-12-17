@@ -59,6 +59,8 @@ namespace ShillohHillsCollege.Win.Bursary
                 return;
             }
 
+            string paymentId = $"SHS/DP/{DateTime.Now.ToString("ddMMyyHmmss")}";
+
             decimal amtPaid = Convert.ToDecimal(txtSelectedAmount.Text);
             decimal outstanding = Convert.ToDecimal(txtSelectedBalance.Text);
             decimal creditAmt = Convert.ToDecimal(txtDebt.Text);
@@ -72,8 +74,7 @@ namespace ShillohHillsCollege.Win.Bursary
 
             var currentBalance = PaymentQuery.GetStudentCurrentBalance(txtSearchId.Text);
             var newBalance = currentBalance - creditAmt;
-            PaymentCommand.AddPaymentHistory(txtSearchId.Text, txtSelectedSession.Text, txtSelectedTerm.Text,
-                txtSelectedClass.Text, creditAmt, "Debt Payment", "");
+            PaymentCommand.AddPaymentHistory(txtSearchId.Text, amtPaid, outstanding, "Debt Payment", paymentId, "admin");
             PaymentCommand.UpdateStudentOutstandingBalance(txtSearchId.Text, newBalance);
             //PaymentCommand.UpdateAmountPaidAfterDebt(txtSearchId.Text, txtSelectedSession.Text, txtSelectedTerm.Text,
             //    txtSelectedClass.Text, creditAmt);

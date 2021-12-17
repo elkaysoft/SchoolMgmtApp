@@ -129,8 +129,7 @@ namespace ShillohHillsCollege.Win.Admin
                 UploadStudentPayment();
                 SettingsCommand.UpdateAutoPaymentId();
                 lblCurrName.Visible = false;
-                MessageBox.Show("Record uploaded successfully",
-                       "Information Center", MessageBoxButtons.OK);
+               
                 //var receipt = new FeeReceipt();
                 //receipt.lblInvoiceId.Text = pId;
                 //receipt.Show();
@@ -146,6 +145,8 @@ namespace ShillohHillsCollege.Win.Admin
         private void UploadStudentPayment()
         {
             int insertionCount = 0;
+            decimal totalBal = 0;
+            decimal totalPaid = 0;
 
             foreach (DataGridViewRow row in dgAcademicFees.Rows)
             {
@@ -153,6 +154,9 @@ namespace ShillohHillsCollege.Win.Admin
                 decimal principalAmount = Convert.ToDecimal(row.Cells[1].Value.ToString());
                 decimal paidAmount = Convert.ToDecimal(row.Cells[2].Value.ToString());
                 decimal balance = principalAmount - paidAmount;
+
+                totalPaid += paidAmount;
+                totalBal += balance;
 
                 var paymentObj = new AddStudentPaymentInfoDto();
 
@@ -172,9 +176,7 @@ namespace ShillohHillsCollege.Win.Admin
                 {
                     var outstandingBalance = PaymentQuery.GetStudentCurrentBalance(lblStudRegNum.Text);
                     var newBalance = outstandingBalance + balance;
-
-                    PaymentCommand.AddPaymentHistory(lblStudRegNum.Text, txtCurrSess.Text,
-                        txtCurrTerm.Text, txtMyClass.Text, paidAmount, paymentObj.description, txtAutoPaymentId.Text);
+                    
                     PaymentCommand.UpdateStudentOutstandingBalance(lblStudRegNum.Text, newBalance);
                     insertionCount += 1;
                 }                
@@ -182,7 +184,9 @@ namespace ShillohHillsCollege.Win.Admin
             
 
             if (insertionCount > 0)
-            {               
+            {
+                PaymentCommand.AddPaymentHistory(lblStudRegNum.Text, totalPaid, totalBal, "Initial Payment", txtAutoPaymentId.Text, "admin");
+
                 ClearFieldsForNewPayment();
                 MessageBox.Show("Payment Addedd Successfully!",
                     "Information Center", MessageBoxButtons.OK);
@@ -233,11 +237,11 @@ namespace ShillohHillsCollege.Win.Admin
             var paymentHistoryObj = PaymentQuery.GetPaymentHistoryByStudent(studentId);
             if (paymentHistoryObj.Any())
             {
-                var outstandingAmt = PaymentQuery.GetStudentCurrentBalance(studentId);
-                txtOutstanding.Text = outstandingAmt.ToString();
+                //var outstandingAmt = PaymentQuery.GetStudentCurrentBalance(studentId);
+                //txtOutstanding.Text = outstandingAmt.ToString();
                 foreach (var payment in paymentHistoryObj)
                 {
-                    dgStatistics.Rows.Add(payment.session, payment.term, payment.studentClass, payment.description, payment.amountPaid, payment.dateCreated);                    
+                    dgStatistics.Rows.Add(payment.paymentId, payment.description, payment.amountPaid, payment.outstandingAmount, payment.dateCreated);                    
                 }
             }
             else
@@ -334,49 +338,7 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //if (txtSelectedBalance.Text == "" || txtSelectedAmount.Text == "" || txtDebt.Text == "")
-                //{
-                //    MessageBox.Show("Oustanding Amount/Amount Paid cannot be empty",
-                //           "Information Center", MessageBoxButtons.OK);
-                //    return;
-                //}
-
-                //decimal amtPaid = Convert.ToDecimal(txtSelectedAmount.Text);
-                //decimal outstanding = Convert.ToDecimal(txtSelectedBalance.Text);
-                //decimal creditAmt = Convert.ToDecimal(txtDebt.Text);
-                //var studentObj = label1.Text;
-                //var studentId = studentObj.Split('-')[1].ToString();
-
-                //if (outstanding == 0)
-                //{
-                //    MessageBox.Show("You do not have an outstanding amount for the selected record",
-                //          "Information Center", MessageBoxButtons.OK);
-                //    return;
-                //}
-
-                //var currentBalance = PaymentQuery.GetStudentCurrentBalance(studentId);
-                //var newBalance = currentBalance - creditAmt;
-                //PaymentCommand.AddPaymentHistory(studentId, txtSelectedSession.Text, txtSelectedTerm.Text,
-                //    txtSelectedClass.Text, creditAmt, "Debt Payment", "");
-                //PaymentCommand.UpdateStudentOutstandingBalance(studentId, newBalance);
-                //PaymentCommand.UpdateAmountPaidAfterDebt(lblPaymentId.Text, creditAmt);
-
-                //MessageBox.Show("Payment added successfully!",
-                //         "Information Center", MessageBoxButtons.OK);
-
-                //dgDebtPayment.Rows.Clear();
-                //txtDebt.Text = "";
-              
-                //SetPaymentForDebt(studentId);
-            }
-            catch(Exception ex)
-            {
-                ex.ToString();
-                MessageBox.Show("Oops! Something went wrong!",
-                        "Information Center", MessageBoxButtons.OK);
-            }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -516,6 +478,9 @@ namespace ShillohHillsCollege.Win.Admin
                     var availablebalance = PaymentQuery.GetStudentCurrentBalance(registrationno);
                     if (availablebalance > 0)
                     {
+                        label1.Visible = true;
+                        //label11.Visible = true;
+
                         label1.Text = $"{studentname}";
                         label11.Text = registrationno;
                         pnOustandingPayment.Visible = true;
@@ -534,6 +499,58 @@ namespace ShillohHillsCollege.Win.Admin
                 {
                     ex.ToString();
                 }
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtdebtRepaymentAmt.Text == "" || txtTotalBalance.Text == "")
+                {
+                    MessageBox.Show("Oustanding Amount/Amount to pay cannot be empty",
+                           "Information Center", MessageBoxButtons.OK);
+                    return;
+                }
+                
+                string paymentId = $"SHS/DP/{DateTime.Now.ToString("ddMMyyHmmss")}";
+                decimal amtPaid = Convert.ToDecimal(txtdebtRepaymentAmt.Text);
+                decimal outstanding = Convert.ToDecimal(txtTotalBalance.Text);
+
+                if (outstanding == 0)
+                {
+                    MessageBox.Show("You do not have an outstanding amount for the selected record",
+                          "Information Center", MessageBoxButtons.OK);
+                    return;
+                }                
+
+                if(amtPaid > outstanding)
+                {
+                    MessageBox.Show("Amount to pay cannot be greater than outstanding amount",
+                          "Information Center", MessageBoxButtons.OK);
+                    return;
+                }
+
+                var studentId = label11.Text;
+                var newBalance = 0.0M;
+                newBalance = outstanding - amtPaid;
+
+                PaymentCommand.AddPaymentHistory(studentId, amtPaid, newBalance, "Debt Payment", paymentId, "admin");
+                PaymentCommand.UpdateStudentOutstandingBalance(studentId, newBalance);
+
+                MessageBox.Show("Payment added successfully!",
+                         "Information Center", MessageBoxButtons.OK);
+
+                SetPaymentForDebt(studentId);
+                txtdebtRepaymentAmt.Text = "";
+                var availablebalance = PaymentQuery.GetStudentCurrentBalance(studentId);
+                txtTotalBalance.Text = availablebalance.ToString();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                MessageBox.Show("Oops! Something went wrong!",
+                        "Information Center", MessageBoxButtons.OK);
             }
         }
     }
