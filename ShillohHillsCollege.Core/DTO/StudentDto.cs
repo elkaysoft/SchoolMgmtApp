@@ -40,6 +40,17 @@ namespace ShillohHillsCollege.Core.DTO
 
     }
 
+    public class UpdateStudentDto
+    {
+        public string FullName { get; set; }
+        public string DoB { get; set; }
+        public string Gender { get; set; }
+        public string CurrentClass { get; set; }
+        public string ParentName { get; set; }
+        public string ParentMobile { get; set; }
+        public string studentId { get; set; }
+    }
+
     public class StudentClassDto
     {
         public int Id { get; set; }

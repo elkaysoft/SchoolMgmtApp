@@ -1,4 +1,5 @@
-﻿using ShillohHillsCollege.Win.Reporting;
+﻿using ShillohHillCollege.Win.Admin;
+using ShillohHillsCollege.Win.Reporting;
 using System;
 using System.Windows.Forms;
 
@@ -56,6 +57,12 @@ namespace ShillohHillsCollege.Win.Admin
         {
             var rptDashboard = new ReportDashboard();
             rptDashboard.ShowDialog();
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var cManagement = new changeManagement();
+            cManagement.ShowDialog();
         }
     }
 }

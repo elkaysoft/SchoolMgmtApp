@@ -70,6 +70,49 @@ namespace ShillohHillsCollege.Core.Queries
             return response;
         }
 
+        public static List<FeesPaymentDto> GetPaymentsByPaymentId(string paymentId)
+        {
+            var response = new List<FeesPaymentDto>();
+
+            try
+            {
+                var sql = "select * from FeesPayment where PaymentId=@payId";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+
+                    var resp = connection.Query<FeesPaymentDto>(sql,
+                        new { payId = paymentId });
+
+                    if (resp.Any())
+                    {
+                        foreach (var r in resp)
+                        {
+                            response.Add(new FeesPaymentDto
+                            {
+                                Id = r.Id,
+                                studentId = r.studentId,
+                                AmountPaid = r.AmountPaid,
+                                outstandingAmount = r.outstandingAmount,
+                                CreatedOn = r.CreatedOn,
+                                totalAmount = r.totalAmount,
+                                currentClass = r.currentClass,
+                                term = r.term,
+                                description = r.description
+                            });
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+
+            return response;
+        }
+
         public static List<PaymentHistoryDto> GetPaymentHistoryByStudent(string studentId)
         {
             var response = new List<PaymentHistoryDto>();

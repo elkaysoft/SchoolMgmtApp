@@ -20,7 +20,7 @@ namespace ShillohHillsCollege.Core.Commands
             try
             {
                 var sql = "INSERT INTO StudentInfo(RegistrationNo,FullName,Gender,DoB,CurrentClass,ParentName,ParentMobile,OutstandingBalance,IsDeleted,CreatedBy,CreatedOn) VALUES(@regNumber,@FullName,@Gender,@Dob,@CurrentClass,@ParentName,@ParentMobile,@OutstandingBalance,@IsDeleted,@Createdby,@CreatedOn)";
-                using(var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
                     var resp = connection.Execute(sql, new
@@ -38,7 +38,7 @@ namespace ShillohHillsCollege.Core.Commands
                         CreatedOn = request.CreatedOn
                     });
 
-                    if(resp > 0)
+                    if (resp > 0)
                     {
                         result.code = ResponseHub.Responsecode20;
                         result.description = ResponseHub.ResponseMessage20;
@@ -46,7 +46,7 @@ namespace ShillohHillsCollege.Core.Commands
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ex.ToString();
                 result.code = ResponseHub.Responsecode99;
@@ -92,8 +92,57 @@ namespace ShillohHillsCollege.Core.Commands
             }
 
             return result;
-        }              
+        }
 
+        public static void UpdateStudentInfo(UpdateStudentDto payload)
+        {
+            try
+            {
+                var sql = "UPDATE StudentInfo SET FullName = @name, DoB = @dob, Gender = @gender, CurrentClass = @klass" +
+                    ", ParentName = @pName, ParentMobile = @pMobile where RegistrationNo = @regNo";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.Execute(sql, new
+                    {
+                        name = payload.FullName,
+                        dob = payload.DoB,
+                        gender = payload.Gender,
+                        klass = payload.CurrentClass,
+                        pName = payload.ParentName,
+                        pMobile = payload.ParentMobile,
+                        regNo = payload.studentId
+                    });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+        }
+
+        public static void DeleteStudent(string studentId)
+        {
+            try
+            {
+                var sql = "DELETE FROM StudentInfo WHERE RegistrationNo = @regNumber";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.Execute(sql, new
+                    {
+                        regNumber = studentId
+                    });
+                }
+            }
+            catch 
+            {             
+            }
+        }
+
+
+        //Term Migration
         public static void MigratetudentsToAnotherClass(string currentClass, string newClass)
         {
             var sql = "UPDATE StudentInfo SET CurrentClass = '"+ newClass +"' where CurrentClass = '"+ currentClass +"' ";
