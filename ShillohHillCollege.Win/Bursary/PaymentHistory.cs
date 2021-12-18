@@ -14,26 +14,42 @@ namespace ShillohHillsCollege.Win.Bursary
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearchParam.Text == "")
+            var query = StudentQuery.GetStudentByKeyword(txtSearchParam.Text).Result;
+            var arry = query.data;
+            dgHistorylookup.Rows.Clear();
+            if (arry.Any())
             {
-                MessageBox.Show("Kindly supply Student Id",
-                        "Information Center", MessageBoxButtons.OK);
-                return;
+                foreach (var student in arry)
+                {
+                    dgHistorylookup.Rows.Add(student.RegistrationNo, student.FullName, student.CurrentClass);
+                }
             }
-
-            dgStatistics.Rows.Clear();
-            SetStatistics();
+            else
+            {
+                MessageBox.Show($"{query.description}",
+                   "Information Center", MessageBoxButtons.OK);
+            }          
         }
 
-        private void SetStatistics()
+        private void dgHistorylookup_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var paymentStats = PaymentQuery.GetFeesStatisticsByStudent(txtSearchParam.Text);
-            if (paymentStats.Any())
+            if (e.ColumnIndex == dgHistorylookup.Columns[3].Index)
             {
-                foreach (var payment in paymentStats)
+                var registrationNo = dgHistorylookup.CurrentRow.Cells[0].Value.ToString();
+                dgStatistics.Rows.Clear();
+                dgStatistics.Visible = true;
+                SetPaymentHistory(registrationNo);
+            }
+        }
+
+        private void SetPaymentHistory(string studentId)
+        {
+            var paymentHistoryObj = PaymentQuery.GetPaymentHistoryByStudent(studentId);
+            if (paymentHistoryObj.Any())
+            {
+                foreach (var payment in paymentHistoryObj)
                 {
-                    dgStatistics.Rows.Add(payment.session, payment.term, payment.currentClass, payment.totalAmount,
-                        payment.AmountPaid, payment.outstandingAmount);
+                    dgStatistics.Rows.Add(payment.paymentId, payment.description, payment.amountPaid, payment.outstandingAmount, payment.dateCreated);
                 }
             }
             else
@@ -42,6 +58,8 @@ namespace ShillohHillsCollege.Win.Bursary
                        "Information Center", MessageBoxButtons.OK);
             }
         }
+
+
 
 
     }
