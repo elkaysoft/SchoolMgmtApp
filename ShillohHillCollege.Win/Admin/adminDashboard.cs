@@ -1,4 +1,5 @@
 ﻿using ShillohHillCollege.Win.Admin;
+using ShillohHillsCollege.Core.Queries;
 using ShillohHillsCollege.Win.Reporting;
 using System;
 using System.Windows.Forms;
@@ -44,7 +45,11 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void adminDashboard_Load(object sender, EventArgs e)
         {
-            //UpdateStudentClass();
+            lblStudentCount.Text = SettingsQuery.GetTotalStudentCount().ToString();
+            lblDebtCount.Text = SettingsQuery.GetTotalDebtCount().ToString();
+            var currentAcademicInfo = SettingsQuery.GetCurrentAcademicTerm();
+            lblCurrentSession.Text = currentAcademicInfo.Session;
+            lblCurrentTerm.Text = currentAcademicInfo.Term;
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -331,6 +331,47 @@ namespace ShillohHillsCollege.Core.Queries
             return result;
         }
 
+        public static int GetTotalStudentCount()
+        {
+            int result = 0;
+            try
+            {
+                var sql = "select count(RegistrationNo) from StudentInfo where IsDeleted = 0";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.QueryFirstOrDefault<int>(sql);
+                    result = resp;                  
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+
+            return result;
+        }
+
+        public static decimal GetTotalDebtCount()
+        {
+            decimal result = 0;
+            try
+            {
+                var sql = "select sum(OutstandingAmount) from FeesPayment where IsDeleted = 0";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.QueryFirstOrDefault<decimal>(sql);
+                    result = resp;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+
+            return result;
+        }
 
         public static bool HasOneActiveTerm()
         {

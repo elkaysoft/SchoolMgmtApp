@@ -52,5 +52,10 @@ namespace ShillohHillsCollege.Win.Bursary
             passChange.lblUsername.Text = lblUsername.Text;
             passChange.ShowDialog();
         }
+
+        private void bursaryDashboard_Load(object sender, EventArgs e)
+        {
+            lblCurrentTime.Text = DateTime.Now.ToString("H:mm ss tt");
+        }
     }
 }

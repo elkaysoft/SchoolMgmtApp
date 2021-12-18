@@ -45,13 +45,17 @@ namespace ShillohHillsCollege.Win.Bursary
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.lblFName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -104,14 +108,14 @@ namespace ShillohHillsCollege.Win.Bursary
             // addStudentToolStripMenuItem
             // 
             this.addStudentToolStripMenuItem.Name = "addStudentToolStripMenuItem";
-            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.addStudentToolStripMenuItem.Text = "Add Student";
             this.addStudentToolStripMenuItem.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
             // 
             // viewStudentToolStripMenuItem
             // 
             this.viewStudentToolStripMenuItem.Name = "viewStudentToolStripMenuItem";
-            this.viewStudentToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.viewStudentToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.viewStudentToolStripMenuItem.Text = "View Student";
             this.viewStudentToolStripMenuItem.Click += new System.EventHandler(this.viewStudentToolStripMenuItem_Click);
             // 
@@ -128,21 +132,21 @@ namespace ShillohHillsCollege.Win.Bursary
             // makePaymentToolStripMenuItem
             // 
             this.makePaymentToolStripMenuItem.Name = "makePaymentToolStripMenuItem";
-            this.makePaymentToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.makePaymentToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.makePaymentToolStripMenuItem.Text = "Make Payment";
             this.makePaymentToolStripMenuItem.Click += new System.EventHandler(this.makePaymentToolStripMenuItem_Click);
             // 
             // viewPaymentToolStripMenuItem
             // 
             this.viewPaymentToolStripMenuItem.Name = "viewPaymentToolStripMenuItem";
-            this.viewPaymentToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.viewPaymentToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.viewPaymentToolStripMenuItem.Text = "Payment History";
             this.viewPaymentToolStripMenuItem.Click += new System.EventHandler(this.viewPaymentToolStripMenuItem_Click);
             // 
             // debtPaymentToolStripMenuItem
             // 
             this.debtPaymentToolStripMenuItem.Name = "debtPaymentToolStripMenuItem";
-            this.debtPaymentToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.debtPaymentToolStripMenuItem.Size = new System.Drawing.Size(218, 28);
             this.debtPaymentToolStripMenuItem.Text = "Debt Payment";
             this.debtPaymentToolStripMenuItem.Click += new System.EventHandler(this.debtPaymentToolStripMenuItem_Click);
             // 
@@ -164,13 +168,13 @@ namespace ShillohHillsCollege.Win.Bursary
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(12, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 31);
+            this.label1.Size = new System.Drawing.Size(258, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "WELCOME TO BURSARY DASHBOARD";
+            this.label1.Text = "BURSARY DASHBOARD";
             // 
             // lblUsername
             // 
@@ -182,15 +186,63 @@ namespace ShillohHillsCollege.Win.Bursary
             this.lblUsername.Text = "username";
             this.lblUsername.Visible = false;
             // 
+            // lblFName
+            // 
+            this.lblFName.AutoSize = true;
+            this.lblFName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblFName.ForeColor = System.Drawing.Color.Black;
+            this.lblFName.Location = new System.Drawing.Point(1024, 45);
+            this.lblFName.Name = "lblFName";
+            this.lblFName.Size = new System.Drawing.Size(53, 25);
+            this.lblFName.TabIndex = 10;
+            this.lblFName.Text = "User,";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(939, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Welcome ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(939, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 25);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Login Time:";
+            // 
+            // lblCurrentTime
+            // 
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblCurrentTime.ForeColor = System.Drawing.Color.Black;
+            this.lblCurrentTime.Location = new System.Drawing.Point(1042, 98);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(22, 25);
+            this.lblCurrentTime.TabIndex = 11;
+            this.lblCurrentTime.Text = "ll";
+            // 
             // bursaryDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 692);
+            this.Controls.Add(this.lblFName);
+            this.Controls.Add(this.lblCurrentTime);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "bursaryDashboard";
@@ -198,6 +250,7 @@ namespace ShillohHillsCollege.Win.Bursary
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.bursaryDashboard_FormClosing);
+            this.Load += new System.EventHandler(this.bursaryDashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -223,5 +276,9 @@ namespace ShillohHillsCollege.Win.Bursary
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.Label lblFName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCurrentTime;
     }
 }

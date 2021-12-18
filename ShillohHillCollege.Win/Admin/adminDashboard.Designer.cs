@@ -31,6 +31,8 @@ namespace ShillohHillsCollege.Win.Admin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminDashboard));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -42,27 +44,33 @@ namespace ShillohHillsCollege.Win.Admin
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblFName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblStudentCount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblDebtCount = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblCurrentSession = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCurrentTerm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -92,9 +100,34 @@ namespace ShillohHillsCollege.Win.Admin
             this.splitContainer1.Panel2.Controls.Add(this.panel6);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1318, 610);
-            this.splitContainer1.SplitterDistance = 287;
+            this.splitContainer1.Size = new System.Drawing.Size(1761, 610);
+            this.splitContainer1.SplitterDistance = 383;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LightCyan;
+            this.panel8.Controls.Add(this.linkLabel6);
+            this.panel8.Location = new System.Drawing.Point(-2, 402);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(518, 43);
+            this.panel8.TabIndex = 3;
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.linkLabel6.ForeColor = System.Drawing.Color.Black;
+            this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel6.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel6.Location = new System.Drawing.Point(42, 10);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(235, 31);
+            this.linkLabel6.TabIndex = 1;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Change Management";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // panel7
             // 
@@ -234,6 +267,18 @@ namespace ShillohHillsCollege.Win.Admin
             this.panel1.Size = new System.Drawing.Size(520, 48);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -251,7 +296,7 @@ namespace ShillohHillsCollege.Win.Admin
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(50, 150);
+            this.lblUsername.Location = new System.Drawing.Point(21, 293);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(64, 25);
             this.lblUsername.TabIndex = 0;
@@ -261,12 +306,20 @@ namespace ShillohHillsCollege.Win.Admin
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel6.Controls.Add(this.lblCurrentTerm);
+            this.panel6.Controls.Add(this.lblCurrentSession);
+            this.panel6.Controls.Add(this.lblDebtCount);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.lblStudentCount);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.lblFName);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(0, -1);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1027, 100);
+            this.panel6.Size = new System.Drawing.Size(1428, 205);
             this.panel6.TabIndex = 0;
             // 
             // lblFName
@@ -291,48 +344,99 @@ namespace ShillohHillsCollege.Win.Admin
             this.label2.TabIndex = 0;
             this.label2.Text = "Welcome ";
             // 
-            // linkLabel6
+            // label3
             // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.linkLabel6.ForeColor = System.Drawing.Color.Black;
-            this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel6.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel6.Location = new System.Drawing.Point(42, 10);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(235, 31);
-            this.linkLabel6.TabIndex = 1;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Change Management";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(15, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(257, 28);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Registered Student";
             // 
-            // panel8
+            // lblStudentCount
             // 
-            this.panel8.BackColor = System.Drawing.Color.LightCyan;
-            this.panel8.Controls.Add(this.linkLabel6);
-            this.panel8.Location = new System.Drawing.Point(-2, 402);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(518, 43);
-            this.panel8.TabIndex = 3;
+            this.lblStudentCount.AutoSize = true;
+            this.lblStudentCount.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentCount.Location = new System.Drawing.Point(21, 127);
+            this.lblStudentCount.Name = "lblStudentCount";
+            this.lblStudentCount.Size = new System.Drawing.Size(229, 34);
+            this.lblStudentCount.TabIndex = 1;
+            this.lblStudentCount.Text = "studentCount";
             // 
-            // pictureBox1
+            // label4
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(411, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 28);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Total Debt";
+            // 
+            // lblDebtCount
+            // 
+            this.lblDebtCount.AutoSize = true;
+            this.lblDebtCount.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebtCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDebtCount.Location = new System.Drawing.Point(421, 127);
+            this.lblDebtCount.Name = "lblDebtCount";
+            this.lblDebtCount.Size = new System.Drawing.Size(179, 34);
+            this.lblDebtCount.TabIndex = 1;
+            this.lblDebtCount.Text = "debtCount";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(701, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 28);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Current Session";
+            // 
+            // lblCurrentSession
+            // 
+            this.lblCurrentSession.AutoSize = true;
+            this.lblCurrentSession.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentSession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblCurrentSession.Location = new System.Drawing.Point(711, 127);
+            this.lblCurrentSession.Name = "lblCurrentSession";
+            this.lblCurrentSession.Size = new System.Drawing.Size(253, 34);
+            this.lblCurrentSession.TabIndex = 1;
+            this.lblCurrentSession.Text = "currentSession";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(1082, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(182, 28);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Current Term";
+            // 
+            // lblCurrentTerm
+            // 
+            this.lblCurrentTerm.AutoSize = true;
+            this.lblCurrentTerm.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTerm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblCurrentTerm.Location = new System.Drawing.Point(1092, 127);
+            this.lblCurrentTerm.Name = "lblCurrentTerm";
+            this.lblCurrentTerm.Size = new System.Drawing.Size(213, 34);
+            this.lblCurrentTerm.TabIndex = 1;
+            this.lblCurrentTerm.Text = "currentTerm";
             // 
             // adminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 610);
+            this.ClientSize = new System.Drawing.Size(1761, 610);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -347,6 +451,8 @@ namespace ShillohHillsCollege.Win.Admin
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -359,11 +465,9 @@ namespace ShillohHillsCollege.Win.Admin
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,5 +494,13 @@ namespace ShillohHillsCollege.Win.Admin
         public System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.Label lblStudentCount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDebtCount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCurrentTerm;
+        private System.Windows.Forms.Label lblCurrentSession;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }

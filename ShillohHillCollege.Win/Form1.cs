@@ -40,6 +40,7 @@ namespace ShillohHillsCollege.Win
                 {
                     var bdashboard = new bursaryDashboard();
                     bdashboard.lblUsername.Text = userInfo.Username;
+                    bdashboard.lblFName.Text = $"{ userInfo.FullName},";
                     bdashboard.Show();
                     this.Hide();
                 }
