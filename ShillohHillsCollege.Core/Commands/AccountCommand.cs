@@ -23,7 +23,7 @@ namespace ShillohHillsCollege.Core.Commands
 
             try
             {
-                var sql = "INSERT INTO UserLogin(Username,Password,FullName,Gender,PhoneNumber,IsDeleted,IsActive,CreatedBy,UserType) VALUES(@username,@password,@fullName,@gender,@phone,@deleted,@active,@createdBy,@uType)";
+                var sql = "INSERT INTO UserLogin(Username,Password,FullName,Gender,PhoneNumber,IsDeleted,DateCreated,CreatedBy,UserType) VALUES(@username,@password,@fullName,@gender,@phone,@isDeleted,@dateCreated,@createdBy,@uType)";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
@@ -34,10 +34,10 @@ namespace ShillohHillsCollege.Core.Commands
                         fullName = request.FullName,
                         gender = request.Gender,
                         phone = request.PhoneNumber,
-                        deleted = 0,
-                        active = 1,
+                        isDeleted = 0,
                         createdBy = "admin",
-                        uType = request.UserType
+                        uType = request.UserType,
+                        dateCreated = helper.FormatDateV2(DateTime.Now)
                     });
 
                     if (resp > 0)

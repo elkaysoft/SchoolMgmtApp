@@ -62,6 +62,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAmountPaid = new System.Windows.Forms.TextBox();
+            this.btnUpdatePayment = new System.Windows.Forms.Button();
+            this.lblPaymentId = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -100,6 +104,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblPaymentId);
+            this.tabPage2.Controls.Add(this.btnUpdatePayment);
+            this.tabPage2.Controls.Add(this.txtAmountPaid);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.dgPayments);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.btnSearchPayment);
@@ -333,7 +341,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(2, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(964, 2);
+            this.panel2.Size = new System.Drawing.Size(1050, 2);
             this.panel2.TabIndex = 6;
             // 
             // dgPayments
@@ -354,6 +362,7 @@
             this.dgPayments.RowHeadersVisible = false;
             this.dgPayments.RowHeadersWidth = 51;
             this.dgPayments.RowTemplate.Height = 24;
+            this.dgPayments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPayments.Size = new System.Drawing.Size(1009, 171);
             this.dgPayments.TabIndex = 7;
             // 
@@ -405,6 +414,42 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.Width = 140;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 304);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Amount Paid";
+            // 
+            // txtAmountPaid
+            // 
+            this.txtAmountPaid.Location = new System.Drawing.Point(163, 302);
+            this.txtAmountPaid.Name = "txtAmountPaid";
+            this.txtAmountPaid.Size = new System.Drawing.Size(182, 28);
+            this.txtAmountPaid.TabIndex = 9;
+            // 
+            // btnUpdatePayment
+            // 
+            this.btnUpdatePayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUpdatePayment.Location = new System.Drawing.Point(368, 300);
+            this.btnUpdatePayment.Name = "btnUpdatePayment";
+            this.btnUpdatePayment.Size = new System.Drawing.Size(93, 32);
+            this.btnUpdatePayment.TabIndex = 10;
+            this.btnUpdatePayment.Text = "Update";
+            this.btnUpdatePayment.UseVisualStyleBackColor = true;
+            // 
+            // lblPaymentId
+            // 
+            this.lblPaymentId.AutoSize = true;
+            this.lblPaymentId.Location = new System.Drawing.Point(57, 377);
+            this.lblPaymentId.Name = "lblPaymentId";
+            this.lblPaymentId.Size = new System.Drawing.Size(28, 20);
+            this.lblPaymentId.TabIndex = 11;
+            this.lblPaymentId.Text = "az";
+            this.lblPaymentId.Visible = false;
             // 
             // changeManagement
             // 
@@ -466,5 +511,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnUpdatePayment;
+        private System.Windows.Forms.TextBox txtAmountPaid;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPaymentId;
     }
 }

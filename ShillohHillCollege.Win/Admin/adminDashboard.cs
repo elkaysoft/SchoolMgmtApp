@@ -49,8 +49,8 @@ namespace ShillohHillsCollege.Win.Admin
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var userMgmt = new AddUser();
-            userMgmt.ShowDialog();
+            var umgmt = new UserMgmt();
+            umgmt.ShowDialog();
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -63,6 +63,17 @@ namespace ShillohHillsCollege.Win.Admin
         {
             var cManagement = new changeManagement();
             cManagement.ShowDialog();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddFreshUser fd = new AddFreshUser();
+            fd.ShowDialog();
         }
     }
 }

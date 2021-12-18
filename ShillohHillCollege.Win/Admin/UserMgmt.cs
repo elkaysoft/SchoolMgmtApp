@@ -3,22 +3,23 @@ using ShillohHillsCollege.Core.DTO;
 using ShillohHillsCollege.Core.Queries;
 using ShillohHillsCollege.Core.Util;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShillohHillsCollege.Win.Admin
+namespace ShillohHillCollege.Win.Admin
 {
-    public partial class AddUser : Form
+    public partial class UserMgmt : Form
     {
-        public AddUser()
+        public UserMgmt()
         {
-            //InitializeComponent();
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            UploadNewUser();
-        }
+            InitializeComponent();
+        }       
 
         void UploadNewUser()
         {
@@ -47,6 +48,7 @@ namespace ShillohHillsCollege.Win.Admin
                     ClearTextFileds();
                     MessageBox.Show("User uploaded succesfully!",
                        "Information Center", MessageBoxButtons.OK);
+                    LoadAllUsers();
                 }
                 else
                 {
@@ -67,22 +69,28 @@ namespace ShillohHillsCollege.Win.Admin
             drpRole.SelectedIndex = -1;
         }
 
-        private void AddUser_Load(object sender, EventArgs e)
+        private void UserMgmt_Load(object sender, EventArgs e)
         {
             LoadAllUsers();
         }
 
         void LoadAllUsers()
         {
+            dgUsers.Rows.Clear();
             var result = AccountQuery.GetAllUsers();
             if (result.Any())
             {
-                foreach(var user in result)
+                foreach (var user in result)
                 {
                     dgUsers.Rows.Add(user.Username, user.FullName, user.Gender, user.PhoneNumber,
                         user.UserType, user.DateCreated.ToString("dd-MM-yyyy"));
                 }
             }
+        }
+
+        private void btnAddUser_Click_1(object sender, EventArgs e)
+        {
+            UploadNewUser();
         }
     }
 }

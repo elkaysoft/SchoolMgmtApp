@@ -148,5 +148,20 @@ namespace ShillohHillCollege.Win.Admin
             }
             
         }
+
+        private void dgPayments_SelectionChanged(object sender, EventArgs e)
+        {
+            bool selectionFlg = dgPayments.CurrentRow.Selected;
+
+            if (selectionFlg && dgPayments.Rows.Count > 0)
+            {               
+                var amtPaid = Convert.ToDecimal(dgPayments.CurrentRow.Cells[5].Value);
+                var Id = Convert.ToInt32(dgPayments.CurrentRow.Cells[0].Value);
+
+                txtAmountPaid.Text = amtPaid.ToString();
+                lblPaymentId.Text = Id.ToString();
+            }
+        }
+
     }
 }
