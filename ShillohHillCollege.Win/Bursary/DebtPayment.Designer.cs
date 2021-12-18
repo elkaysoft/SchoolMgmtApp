@@ -108,7 +108,7 @@ namespace ShillohHillsCollege.Win.Bursary
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.Column6});
-            this.dgDebtStudent.Location = new System.Drawing.Point(21, 247);
+            this.dgDebtStudent.Location = new System.Drawing.Point(21, 217);
             this.dgDebtStudent.Name = "dgDebtStudent";
             this.dgDebtStudent.RowHeadersVisible = false;
             this.dgDebtStudent.RowHeadersWidth = 51;
@@ -160,10 +160,11 @@ namespace ShillohHillsCollege.Win.Bursary
             this.pnOustandingPayment.Controls.Add(this.txtTotalBalance);
             this.pnOustandingPayment.Controls.Add(this.label9);
             this.pnOustandingPayment.Controls.Add(this.label7);
-            this.pnOustandingPayment.Location = new System.Drawing.Point(673, 237);
+            this.pnOustandingPayment.Location = new System.Drawing.Point(642, 213);
             this.pnOustandingPayment.Name = "pnOustandingPayment";
-            this.pnOustandingPayment.Size = new System.Drawing.Size(476, 303);
+            this.pnOustandingPayment.Size = new System.Drawing.Size(582, 303);
             this.pnOustandingPayment.TabIndex = 42;
+            this.pnOustandingPayment.Visible = false;
             // 
             // label11
             // 
@@ -237,7 +238,7 @@ namespace ShillohHillsCollege.Win.Bursary
             // lblPaymentId
             // 
             this.lblPaymentId.AutoSize = true;
-            this.lblPaymentId.Location = new System.Drawing.Point(46, 520);
+            this.lblPaymentId.Location = new System.Drawing.Point(17, 445);
             this.lblPaymentId.Name = "lblPaymentId";
             this.lblPaymentId.Size = new System.Drawing.Size(85, 20);
             this.lblPaymentId.TabIndex = 43;
@@ -249,7 +250,7 @@ namespace ShillohHillsCollege.Win.Bursary
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1236, 606);
+            this.ClientSize = new System.Drawing.Size(1236, 531);
             this.Controls.Add(this.lblPaymentId);
             this.Controls.Add(this.pnOustandingPayment);
             this.Controls.Add(this.dgDebtStudent);

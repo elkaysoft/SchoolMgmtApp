@@ -47,6 +47,7 @@ namespace ShillohHillsCollege.Win.Bursary
 
         private void dgDebtStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            pnOustandingPayment.Visible = true;
             if (e.ColumnIndex == dgDebtStudent.Columns[3].Index)
             {
                 try
@@ -117,7 +118,6 @@ namespace ShillohHillsCollege.Win.Bursary
                 MessageBox.Show("Payment added successfully!",
                          "Information Center", MessageBoxButtons.OK);
 
-                //SetPaymentForDebt(studentId);
                 txtdebtRepaymentAmt.Text = "";
                 var availablebalance = PaymentQuery.GetStudentCurrentBalance(studentId);
                 txtTotalBalance.Text = availablebalance.ToString();
