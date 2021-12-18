@@ -97,8 +97,17 @@ namespace ShillohHillCollege.Win.Admin
         {
             if (e.ColumnIndex == dgUsers.Columns[6].Index)
             {
-                var userName = dgUsers.CurrentRow.Cells[0].Value.ToString();
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this user?", "Information Centre", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    var userName = dgUsers.CurrentRow.Cells[0].Value.ToString();
+                    AccountCommand.DeleteUser(userName);
+                    MessageBox.Show("User record deleted successfully!",
+                            "Information Center", MessageBoxButtons.OK);
+                    LoadAllUsers();
+                }
 
+                   
             }
         }
     }

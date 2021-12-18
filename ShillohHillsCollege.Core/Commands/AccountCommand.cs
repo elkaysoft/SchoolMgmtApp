@@ -88,13 +88,13 @@ namespace ShillohHillsCollege.Core.Commands
         {
             try
             {
-                var sql = "DELETE FROM StudentInfo WHERE RegistrationNo = @regNumber";
+                var sql = "DELETE FROM UserLogin WHERE Username = @uName";
                 using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
                 {
                     connection.Open();
                     var resp = connection.Execute(sql, new
                     {
-                        regNumber = username
+                        uName = username
                     });
                 }
             }

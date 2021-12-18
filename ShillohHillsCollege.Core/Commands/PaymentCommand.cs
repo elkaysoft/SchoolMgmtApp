@@ -125,6 +125,30 @@ namespace ShillohHillsCollege.Core.Commands
             }
         }
 
+        public static void UpdateStudentPaymentById(int requestId, decimal amountPaid, decimal outstanding)
+        {
+            try
+            {
+                var sql = "UPDATE FeesPayment SET OutstandingAmount = @balance, AmountPaid = @paid "+
+                    "where Id=@id";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.Execute(sql, new
+                    {
+                        balance = outstanding,
+                        paid = amountPaid,
+                        id = requestId
+                    });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+        }
+
         public static void AddPaymentHistory(string studentId, decimal amount, decimal outstandingAmt, string description, string paymentId, string createdBy)
         {
             try

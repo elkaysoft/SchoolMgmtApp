@@ -133,14 +133,17 @@ namespace ShillohHillCollege.Win.Admin
                 return;
             }
 
-            GetStudentPaymentInfo();
+            GetStudentPaymentInfo(txtPaymentId.Text);
         }
 
-        private void GetStudentPaymentInfo()
+        private void GetStudentPaymentInfo(string paymentId)
         {
-            var paymentObj = PaymentQuery.GetPaymentsByPaymentId(txtPaymentId.Text);
+            var paymentObj = PaymentQuery.GetPaymentsByPaymentId(paymentId);
+
+            dgPayments.Rows.Clear();
             if (paymentObj != null)
             {
+                btnUpdatePayment.Enabled = true;
                 foreach(var p in paymentObj)
                 {
                     dgPayments.Rows.Add(p.Id, p.description, p.currentClass, p.term, p.totalAmount, p.AmountPaid, p.outstandingAmount);
@@ -148,13 +151,14 @@ namespace ShillohHillCollege.Win.Admin
             }
             
         }
+               
 
-        private void dgPayments_SelectionChanged(object sender, EventArgs e)
+        private void dgPayments_SelectionChanged_1(object sender, EventArgs e)
         {
             bool selectionFlg = dgPayments.CurrentRow.Selected;
 
             if (selectionFlg && dgPayments.Rows.Count > 0)
-            {               
+            {
                 var amtPaid = Convert.ToDecimal(dgPayments.CurrentRow.Cells[5].Value);
                 var Id = Convert.ToInt32(dgPayments.CurrentRow.Cells[0].Value);
 
@@ -163,5 +167,45 @@ namespace ShillohHillCollege.Win.Admin
             }
         }
 
+        private void btnUpdatePayment_Click(object sender, EventArgs e)
+        {
+            if (txtPaymentId.Text == "")
+            {
+                MessageBox.Show("Kindly supply a payment Id",
+                        "Information Center", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (txtAmountPaid.Text == "")
+            {
+                MessageBox.Show("Kindly supply amount to paid",
+                        "Information Center", MessageBoxButtons.OK);
+                return;
+            }
+
+            decimal amtPaid = Convert.ToDecimal(txtAmountPaid.Text);
+            if (amtPaid == 0)
+            {
+                MessageBox.Show("Kindly supply a valid amount to update",
+                        "Information Center", MessageBoxButtons.OK);
+                return;
+            }
+
+            var totalAmount = Convert.ToDecimal(dgPayments.CurrentRow.Cells[4].Value);
+            int requestId = Convert.ToInt32(dgPayments.CurrentRow.Cells[0].Value);
+
+            if(amtPaid > totalAmount)
+            {
+                MessageBox.Show("Amount to update cannot be greater than total amount",
+                         "Information Center", MessageBoxButtons.OK);
+                return;
+            }
+
+            var outstandingBal = totalAmount - amtPaid;
+            PaymentCommand.UpdateStudentPaymentById(requestId, amtPaid, outstandingBal);
+            MessageBox.Show("Payment updated successfully!",
+                        "Information Center", MessageBoxButtons.OK);
+            GetStudentPaymentInfo(txtPaymentId.Text);
+        }
     }
 }
