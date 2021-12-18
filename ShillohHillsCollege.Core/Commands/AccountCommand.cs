@@ -84,5 +84,24 @@ namespace ShillohHillsCollege.Core.Commands
             return result;
         }
 
+        public static void DeleteUser(string username)
+        {
+            try
+            {
+                var sql = "DELETE FROM StudentInfo WHERE RegistrationNo = @regNumber";
+                using (var connection = new SqlConnection(ConnectionManager.GetConnectionString()))
+                {
+                    connection.Open();
+                    var resp = connection.Execute(sql, new
+                    {
+                        regNumber = username
+                    });
+                }
+            }
+            catch
+            {
+            }
+        }
+
     }
 }

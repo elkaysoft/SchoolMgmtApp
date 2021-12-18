@@ -92,5 +92,14 @@ namespace ShillohHillCollege.Win.Admin
         {
             UploadNewUser();
         }
+
+        private void dgUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgUsers.Columns[6].Index)
+            {
+                var userName = dgUsers.CurrentRow.Cells[0].Value.ToString();
+
+            }
+        }
     }
 }

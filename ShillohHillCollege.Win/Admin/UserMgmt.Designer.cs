@@ -51,6 +51,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -65,7 +66,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(890, 438);
+            this.tabControl1.Size = new System.Drawing.Size(970, 438);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -87,7 +88,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(882, 405);
+            this.tabPage1.Size = new System.Drawing.Size(962, 405);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New User";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -230,7 +231,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(882, 405);
+            this.tabPage2.Size = new System.Drawing.Size(962, 405);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "User Listings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -245,15 +246,17 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
-            this.dgUsers.Location = new System.Drawing.Point(17, 62);
+            this.Column6,
+            this.Column7});
+            this.dgUsers.Location = new System.Drawing.Point(8, 62);
             this.dgUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgUsers.Name = "dgUsers";
             this.dgUsers.RowHeadersVisible = false;
             this.dgUsers.RowHeadersWidth = 51;
             this.dgUsers.RowTemplate.Height = 29;
-            this.dgUsers.Size = new System.Drawing.Size(846, 234);
+            this.dgUsers.Size = new System.Drawing.Size(943, 234);
             this.dgUsers.TabIndex = 0;
+            this.dgUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsers_CellContentClick);
             // 
             // Column1
             // 
@@ -292,16 +295,26 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Date Added";
+            this.Column6.HeaderText = "AddedOn";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Option";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column7.Text = "Remove";
+            this.Column7.UseColumnTextForButtonValue = true;
             // 
             // UserMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 452);
+            this.ClientSize = new System.Drawing.Size(971, 452);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -345,5 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewButtonColumn Column7;
     }
 }
